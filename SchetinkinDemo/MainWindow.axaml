@@ -1,0 +1,32 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="SchetinkinDemo.MainWindow"
+        Title="SchetinkinDemo">
+  <StackPanel Width="200" VerticalAlignment="Center">
+
+		<StackPanel HorizontalAlignment="Center">
+			<TextBlock FontSize="18" Text="Authorization"></TextBlock>
+        </StackPanel>
+
+        <StackPanel Height="20"></StackPanel>
+        
+        <TextBlock Text="Email"></TextBlock>
+        <TextBox x:Name="LoginBox"></TextBox>
+
+        <StackPanel Height="10"></StackPanel>
+
+        <TextBlock Text="Password"></TextBlock>
+        <TextBox x:Name="PasswordBox" PasswordChar="*"></TextBox>
+
+        <StackPanel Height="20"></StackPanel>
+
+        <Button HorizontalAlignment="Stretch" Content="Enter" Click="Button_Click"></Button>
+        
+        <!-- ÂÎÒ ÝÒÎ ÌÛ ÄÎÁÀÂÈËÈ -->
+        <TextBlock Name="ErrorMessageTextBlock" Foreground="Red" HorizontalAlignment="Center" TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
+
+    </StackPanel>
+</Window>

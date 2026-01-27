@@ -1,0 +1,53 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="SchetinkinDemo.ProductsView"
+        Loaded="ProductsView_Loaded"
+        x:CompileBindings="False">
+  
+  <DockPanel Margin="10">
+    
+    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="10" Margin="0,0,0,10">
+      <Button Name="AddButton" Content="Add" Click="AddButton_Click"/>
+      <Button Name="EditButton" Content="Edit" Click="EditButton_Click"/>
+      <Button Name="DeleteButton" Content="Delete" Foreground="Red" Click="DeleteButton_Click"/>
+      <TextBox Name="SearchTextBox" Watermark="Search by name..." Width="250"/>
+      <Button Name="SearchButton" Content="Search" Click="SearchButton_Click"/>
+
+    </StackPanel>
+
+      <TextBlock Name="DebugTextBlock" 
+               DockPanel.Dock="Bottom" 
+               Foreground="Gray" 
+               Margin="5"/>
+
+   <ListBox Name="ProductsListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+        <ListBox.ItemTemplate>
+            <DataTemplate>
+                <!-- Создаем "карточку" для каждого товара -->
+                <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Padding="10" Margin="5">
+                    <Grid ColumnDefinitions="*, Auto" Width="600">
+                        <!-- Левая часть с информацией -->
+                        <StackPanel Grid.Column="0" Spacing="5">
+                            <TextBlock FontSize="16" FontWeight="Bold" Text="{Binding Name}" />
+                            <StackPanel Orientation="Horizontal" Spacing="10">
+                                <TextBlock Text="{Binding Sku, StringFormat='Артикул: {0}'}" />
+                                <TextBlock Text="{Binding BrandName, StringFormat='Бренд: {0}'}" Foreground="Gray"/>
+                                <TextBlock Text="{Binding CategoryName, StringFormat='Категория: {0}'}" Foreground="Gray"/>
+                            </StackPanel>
+                        </StackPanel>
+                        <!-- Правая часть с ценой и остатком -->
+                        <StackPanel Grid.Column="1" Spacing="5" HorizontalAlignment="Right">
+                             <TextBlock FontSize="16" FontWeight="Bold" Text="{Binding Price, StringFormat='{}{0:c}'}" Foreground="Green"/>
+                             <TextBlock Text="{Binding StockQuantity, StringFormat='Остаток: {0}'}" HorizontalAlignment="Right"/>
+                        </StackPanel>
+                    </Grid>
+                </Border>
+            </DataTemplate>
+        </ListBox.ItemTemplate>
+    </ListBox>
+    
+  </DockPanel>
+</UserControl>
