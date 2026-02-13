@@ -1,0 +1,41 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Width="600" Height="500"
+        WindowStartupLocation="CenterOwner"
+        x:CompileBindings="False"
+        x:Class="SchetinkinDemo.OrderDetailsWindow"
+        Title="OrderDetailsWindow">
+  <DockPanel Margin="15">
+    
+    <!-- 1. "Подвал" с кнопкой "Закрыть" -->
+    <Button Name="CloseButton" DockPanel.Dock="Bottom" Content="Закрыть" 
+            HorizontalAlignment="Right" Margin="0,15,0,0" Click="CloseButton_Click" IsCancel="True"/>
+
+    <!-- 2. "Шапка" с основной информацией -->
+    <StackPanel DockPanel.Dock="Top" Spacing="5" Margin="0,0,0,15">
+      <TextBlock Name="OrderNumberTextBlock" FontSize="18" FontWeight="Bold"/>
+      <TextBlock Name="CustomerNameTextBlock" Foreground="Gray"/>
+      <TextBlock Name="OrderDateTextBlock" Foreground="Gray"/>
+      <TextBlock Name="StatusTextBlock" FontWeight="Bold"/>
+    </StackPanel>
+    
+    <!-- 3. Список товаров в заказе (занимает все оставшееся место) -->
+    <ListBox Name="OrderItemsListBox">
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <Border BorderBrush="#EEE" BorderThickness="0,0,0,1" Padding="5">
+            <Grid ColumnDefinitions="*,Auto,Auto,Auto">
+              <TextBlock Grid.Column="0" Text="{Binding ProductName}" Foreground="Black"/>
+              <TextBlock Grid.Column="1" Text="{Binding Quantity, StringFormat='{}{x {0} шт}'}" Margin="10,0" Foreground="Black"/>
+              <TextBlock Grid.Column="2" Text="{Binding PricePerUnit, StringFormat='{}{по {0:c}}'}" Margin="10,0" Foreground="Gray"/>
+              <TextBlock Grid.Column="3" Text="{Binding TotalPositionAmount, StringFormat='{}{= {0:c}}'}" FontWeight="Bold" Margin="10,0" Foreground="Black"/>
+            </Grid>
+          </Border>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+    
+  </DockPanel>
+</Window>

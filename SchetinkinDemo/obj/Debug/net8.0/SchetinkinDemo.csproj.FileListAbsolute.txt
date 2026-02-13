@@ -295,3 +295,4 @@ C:\Users\HomePc\source\repos\SchetinkinDemo\SchetinkinDemo\obj\Debug\net8.0\Sche
 C:\Users\HomePc\source\repos\SchetinkinDemo\SchetinkinDemo\obj\Debug\net8.0\SchetinkinDemo.genruntimeconfig.cache
 C:\Users\HomePc\source\repos\SchetinkinDemo\SchetinkinDemo\obj\Debug\net8.0\ref\SchetinkinDemo.dll
 C:\Users\HomePc\source\repos\SchetinkinDemo\SchetinkinDemo\bin\Debug\net8.0\Avalonia.Controls.DataGrid.dll
+C:\Users\HomePc\source\repos\SchetinkinDemo\SchetinkinDemo\obj\Debug\net8.0\SchetinkinDemo.sourcelink.json

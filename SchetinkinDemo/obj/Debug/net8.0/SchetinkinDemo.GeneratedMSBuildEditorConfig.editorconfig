@@ -29,11 +29,23 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Users/HomePc/source/repos/SchetinkinDemo/SchetinkinDemo/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/HomePc/source/repos/SchetinkinDemo/SchetinkinDemo/ConfirmDialog.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/HomePc/source/repos/SchetinkinDemo/SchetinkinDemo/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/HomePc/source/repos/SchetinkinDemo/SchetinkinDemo/OrderDetailsWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/HomePc/source/repos/SchetinkinDemo/SchetinkinDemo/OrderView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [C:/Users/HomePc/source/repos/SchetinkinDemo/SchetinkinDemo/ProductEditorWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [C:/Users/HomePc/source/repos/SchetinkinDemo/SchetinkinDemo/ProductsView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/HomePc/source/repos/SchetinkinDemo/SchetinkinDemo/UserView.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

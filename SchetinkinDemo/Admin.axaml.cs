@@ -57,14 +57,14 @@ namespace SchetinkinDemo
         {
             // TODO: Заменить на ваш UserControl для заказов
             // MainContentControl.Content = new OrdersView(); 
-            MainContentControl.Content = new TextBlock { Text = "Экран управления заказами (в разработке)", HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center, VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center };
+            MainContentControl.Content = new OrderView();
         }
 
         private void UsersButton_Click(object? sender, RoutedEventArgs e)
         {
             // TODO: Заменить на ваш UserControl для пользователей
             // MainContentControl.Content = new UsersView();
-            MainContentControl.Content = new TextBlock { Text = "Экран управления пользователями (в разработке)", HorizontalAlignment = Avalonia.Layout.HorizontalAlignment.Center, VerticalAlignment = Avalonia.Layout.VerticalAlignment.Center };
+            MainContentControl.Content = new UsersView();
         }
 
         private void LogoutButton_Click(object? sender, RoutedEventArgs e)

@@ -12,7 +12,7 @@ namespace SchetinkinDemo
         public ProductsView()
         {
             InitializeComponent();
-            
+
         }
 
         private async void ProductsView_Loaded(object? sender, RoutedEventArgs e)
@@ -24,13 +24,20 @@ namespace SchetinkinDemo
         {
             using var context = new SkateshopDbContext();
 
+            // 1. Начинаем строить запрос к таблице Products
             IQueryable<Product> query = context.Products;
 
+            // 2. ФИЛЬТРУЕМ: оставляем только те товары, у которых IsActive = true
+            query = query.Where(p => p.IsActive == true);
+
+            // 3. Если в поиске есть текст, добавляем еще один фильтр по имени
             if (!string.IsNullOrWhiteSpace(searchText))
             {
                 query = query.Where(p => p.Name.ToLower().Contains(searchText.ToLower()));
             }
 
+            // 4. Преобразуем отфильтрованные "тяжелые" Product в "легкие" ProductViewModel
+            //    и выполняем запрос к базе данных
             var productViewModels = await query
                 .Select(p => new ProductViewModel
                 {
@@ -44,7 +51,7 @@ namespace SchetinkinDemo
                 })
                 .ToListAsync();
 
-            // --- ИЗМЕНЕНИЕ: Присваиваем данные ListBox ---
+            // 5. Присваиваем результат нашему ListBox для отображения
             ProductsListBox.ItemsSource = productViewModels;
         }
 
@@ -75,21 +82,32 @@ namespace SchetinkinDemo
 
         private async void DeleteButton_Click(object? sender, RoutedEventArgs e)
         {
-            // --- ИЗМЕНЕНИЕ: Получаем выбранный элемент из ListBox ---
             var selectedItem = ProductsListBox.SelectedItem as ProductViewModel;
             if (selectedItem == null) return;
 
-            using (var context = new SkateshopDbContext())
-            {
-                var productToDelete = await context.Products.FindAsync(selectedItem.Id);
-                if (productToDelete != null)
-                {
-                    context.Products.Remove(productToDelete);
-                    await context.SaveChangesAsync();
-                }
-            }
+            // Сначала показываем диалог подтверждения
+            var dialog = new ConfirmDialog($"Вы уверены, что хотите убрать из продажи товар '{selectedItem.Name}'?");
+            var parentWindow = (Window)this.VisualRoot;
+            var result = await dialog.ShowDialog<bool>(parentWindow);
 
-            await LoadProducts(SearchTextBox.Text);
+            if (result == true) // Если пользователь нажал "Да"
+            {
+                // --- ВОТ ГЛАВНОЕ ИЗМЕНЕНИЕ ---
+                // Мы больше не используем .Remove()
+                using (var context = new SkateshopDbContext())
+                {
+                    var productToDeactivate = await context.Products.FindAsync(selectedItem.Id);
+                    if (productToDeactivate != null)
+                    {
+                        // Вместо удаления, мы просто меняем флаг
+                        productToDeactivate.IsActive = false;
+                        await context.SaveChangesAsync();
+                    }
+                }
+
+                // Обновляем список, чтобы товар исчез из видимости
+                await LoadProducts(SearchTextBox.Text);
+            }
         }
     }
 }
