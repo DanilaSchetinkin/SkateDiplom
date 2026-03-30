@@ -1,57 +1,95 @@
-using Avalonia.Controls;
+п»їusing Avalonia.Controls;
 using Avalonia.Interactivity;
+using Microsoft.EntityFrameworkCore;
 using SchetinkinDemo.Models;
+using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace SchetinkinDemo
 {
     public partial class MainWindow : Window
     {
+        private int _failedAttempts = 0;
+
         public MainWindow()
         {
             InitializeComponent();
-
         }
-        private void Button_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+
+        private async void Button_Click(object? sender, RoutedEventArgs e)
         {
-            // Сбрасываем старую ошибку
+            // РЎР±СЂР°СЃС‹РІР°РµРј СЃС‚Р°СЂСѓСЋ РѕС€РёР±РєСѓ
             ErrorMessageTextBlock.Text = string.Empty;
 
-            // Используем ваш DbContext
-            using var context = new SkateshopDbContext();// <--- ЗАМЕНИТЕ НА ИМЯ ВАШЕГО DbContext
-
+            // РџСЂРѕРІРµСЂРєР° РЅР° РїСѓСЃС‚С‹Рµ РїРѕР»СЏ
             string email = LoginBox.Text;
-            string plainTextPassword = PasswordBox.Text;
-
-            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(plainTextPassword))
+            string password = PasswordBox.Text;
+            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
             {
-                ErrorMessageTextBlock.Text = "Email и пароль не могут быть пустыми.";
+                ErrorMessageTextBlock.Text = "Email Рё РїР°СЂРѕР»СЊ РЅРµ РјРѕРіСѓС‚ Р±С‹С‚СЊ РїСѓСЃС‚С‹РјРё.";
                 return;
             }
 
-            // ====================================================================
-            // ==       НЕБЕЗОПАСНАЯ ПРОВЕРКА ПАРОЛЯ (КАК ВЫ ПРОСИЛИ)           ==
-            // ====================================================================
-            // Код ищет пользователя, у которого email и пароль (в открытом виде)
-            // совпадают с введенными данными.
-            // Замените .Users и .PasswordHash на названия вашей таблицы и колонки
+            // РџСЂРѕРІРµСЂРєР° РЅР° РїСЂРµРІС‹С€РµРЅРёРµ РєРѕР»РёС‡РµСЃС‚РІР° РїРѕРїС‹С‚РѕРє
+            if (_failedAttempts >= 3)
+            {
+                ErrorMessageTextBlock.Text = "РЎР»РёС€РєРѕРј РјРЅРѕРіРѕ РЅРµСѓРґР°С‡РЅС‹С… РїРѕРїС‹С‚РѕРє. РџРѕРїСЂРѕР±СѓР№С‚Рµ С‡РµСЂРµР· РјРёРЅСѓС‚Сѓ.";
+                LoginButton.IsEnabled = false;
+                await Task.Delay(60000);
+                LoginButton.IsEnabled = true;
+                _failedAttempts = 0;
+                return;
+            }
 
-            var user = context.Users.FirstOrDefault(u => u.Email == email && u.PasswordHash == plainTextPassword);
+            using var context = new SkateshopDbContext();
 
+            // РС‰РµРј РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ РїРѕ email Рё РїР°СЂРѕР»СЋ (РІ РѕС‚РєСЂС‹С‚РѕРј РІРёРґРµ)
+            var user = await context.Users
+                .Include(u => u.Role)
+                .FirstOrDefaultAsync(u => u.Email == email && u.PasswordHash == password);
 
             if (user != null)
             {
-                // УСПЕХ! Пользователь с таким email и паролем найден.
+                // РЈСЃРїРµС€РЅС‹Р№ РІС…РѕРґ
+                _failedAttempts = 0; // СЃР±СЂР°СЃС‹РІР°РµРј СЃС‡С‘С‚С‡РёРє
 
-                var admin = new Admin();
-                admin.Show();
+                string userFio = $"{user.FirstName} {user.LastName}".Trim();
+
+                // РћС‚РєСЂС‹РІР°РµРј РѕРєРЅРѕ РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ СЂРѕР»Рё
+                if (user.Role?.Name?.ToLower() == "admin")
+                {
+                    var adminWindow = new Admin(user.Id, user.Role.Name, userFio);
+                    adminWindow.Show();
+                }
+                else // РїСЂРµРґРїРѕР»Р°РіР°РµРј, С‡С‚Рѕ РѕСЃС‚Р°Р»СЊРЅС‹Рµ РїРѕР»СЊР·РѕРІР°С‚РµР»Рё вЂ” РєР»РёРµРЅС‚С‹
+                {
+                    var clientWindow = new ClientWindow(user.Id, userFio);
+                    clientWindow.Show();
+                }
+
+                // Р—Р°РєСЂС‹РІР°РµРј РѕРєРЅРѕ РІС…РѕРґР°
                 this.Close();
             }
             else
             {
-                // НЕУДАЧА! Либо email, либо пароль неверный.
-                ErrorMessageTextBlock.Text = "Неверный email или пароль.";
+                // РќРµСѓРґР°С‡РЅС‹Р№ РІС…РѕРґ
+                _failedAttempts++;
+                ErrorMessageTextBlock.Text = "РќРµРІРµСЂРЅС‹Р№ email РёР»Рё РїР°СЂРѕР»СЊ.";
+
+                // РћС‡РёС‰Р°РµРј РїРѕР»Рµ РїР°СЂРѕР»СЏ РґР»СЏ Р±РµР·РѕРїР°СЃРЅРѕСЃС‚Рё
+                PasswordBox.Text = string.Empty;
+
+                // Р•СЃР»Рё РїРѕСЃР»Рµ СЌС‚РѕР№ РїРѕРїС‹С‚РєРё РґРѕСЃС‚РёРіРЅСѓС‚ Р»РёРјРёС‚, Р±Р»РѕРєРёСЂСѓРµРј РєРЅРѕРїРєСѓ РЅР° РјРёРЅСѓС‚Сѓ
+                if (_failedAttempts >= 3)
+                {
+                    ErrorMessageTextBlock.Text = "РќРµРІРµСЂРЅС‹Р№ email РёР»Рё РїР°СЂРѕР»СЊ. Р”РѕСЃС‚СѓРї Р·Р°Р±Р»РѕРєРёСЂРѕРІР°РЅ РЅР° 1 РјРёРЅСѓС‚Сѓ.";
+                    LoginButton.IsEnabled = false;
+                    await Task.Delay(60000);
+                    LoginButton.IsEnabled = true;
+                    _failedAttempts = 0;
+                }
             }
         }
     }

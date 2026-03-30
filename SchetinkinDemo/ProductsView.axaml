@@ -1,4 +1,4 @@
-<UserControl xmlns="https://github.com/avaloniaui"
+ï»¿<UserControl xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -10,11 +10,11 @@
   <DockPanel Margin="10">
     
     <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="10" Margin="0,0,0,10">
-      <Button Name="AddButton" Content="Add" Click="AddButton_Click"/>
-      <Button Name="EditButton" Content="Edit" Click="EditButton_Click"/>
-      <Button Name="DeleteButton" Content="Delete" Foreground="Red" Click="DeleteButton_Click"/>
-      <TextBox Name="SearchTextBox" Watermark="Search by name..." Width="250"/>
-      <Button Name="SearchButton" Content="Search" Click="SearchButton_Click"/>
+      <Button Name="AddButton" Content="Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ" Click="AddButton_Click"/>
+      <Button Name="EditButton" Content="Ð˜Ð·Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ" Click="EditButton_Click"/>
+      <Button Name="DeleteButton" Content="Ð£Ð´Ð°Ð»Ð¸Ñ‚ÑŒ" Foreground="Red" Click="DeleteButton_Click"/>
+      <TextBox Name="SearchTextBox" Watermark="ÐŸÐ¾Ð¸ÑÐº Ð¿Ð¾ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸ÑŽ..." Width="250"/>
+      <Button Name="SearchButton" Content="ÐŸÐ¾Ð¸ÑÐº" Click="SearchButton_Click"/>
 
     </StackPanel>
 
@@ -26,22 +26,22 @@
    <ListBox Name="ProductsListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
         <ListBox.ItemTemplate>
             <DataTemplate>
-                <!-- Ñîçäàåì "êàðòî÷êó" äëÿ êàæäîãî òîâàðà -->
+                <!-- Ð¡Ð¾Ð·Ð´Ð°ÐµÐ¼ "ÐºÐ°Ñ€Ñ‚Ð¾Ñ‡ÐºÑƒ" Ð´Ð»Ñ ÐºÐ°Ð¶Ð´Ð¾Ð³Ð¾ Ñ‚Ð¾Ð²Ð°Ñ€Ð° -->
                 <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Padding="10" Margin="5">
                     <Grid ColumnDefinitions="*, Auto" Width="600">
-                        <!-- Ëåâàÿ ÷àñòü ñ èíôîðìàöèåé -->
+                        <!-- Ð›ÐµÐ²Ð°Ñ Ñ‡Ð°ÑÑ‚ÑŒ Ñ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÐµÐ¹ -->
                         <StackPanel Grid.Column="0" Spacing="5">
                             <TextBlock FontSize="16" FontWeight="Bold" Text="{Binding Name}" />
                             <StackPanel Orientation="Horizontal" Spacing="10">
-                                <TextBlock Text="{Binding Sku, StringFormat='Àðòèêóë: {0}'}" />
-                                <TextBlock Text="{Binding BrandName, StringFormat='Áðåíä: {0}'}" Foreground="Gray"/>
-                                <TextBlock Text="{Binding CategoryName, StringFormat='Êàòåãîðèÿ: {0}'}" Foreground="Gray"/>
+                                <TextBlock Text="{Binding Sku, StringFormat='ÐÑ€Ñ‚Ð¸ÐºÑƒÐ»: {0}'}" />
+                                <TextBlock Text="{Binding BrandName, StringFormat='Ð‘Ñ€ÐµÐ½Ð´: {0}'}" Foreground="Gray"/>
+                                <TextBlock Text="{Binding CategoryName, StringFormat='ÐšÐ°Ñ‚ÐµÐ³Ð¾Ñ€Ð¸Ñ: {0}'}" Foreground="Gray"/>
                             </StackPanel>
                         </StackPanel>
-                        <!-- Ïðàâàÿ ÷àñòü ñ öåíîé è îñòàòêîì -->
+                        <!-- ÐŸÑ€Ð°Ð²Ð°Ñ Ñ‡Ð°ÑÑ‚ÑŒ Ñ Ñ†ÐµÐ½Ð¾Ð¹ Ð¸ Ð¾ÑÑ‚Ð°Ñ‚ÐºÐ¾Ð¼ -->
                         <StackPanel Grid.Column="1" Spacing="5" HorizontalAlignment="Right">
                              <TextBlock FontSize="16" FontWeight="Bold" Text="{Binding Price, StringFormat='{}{0:c}'}" Foreground="Green"/>
-                             <TextBlock Text="{Binding StockQuantity, StringFormat='Îñòàòîê: {0}'}" HorizontalAlignment="Right"/>
+                             <TextBlock Text="{Binding StockQuantity, StringFormat='ÐžÑÑ‚Ð°Ñ‚Ð¾Ðº: {0}'}" HorizontalAlignment="Right"/>
                         </StackPanel>
                     </Grid>
                 </Border>

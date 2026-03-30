@@ -1,4 +1,4 @@
-<Window xmlns="https://github.com/avaloniaui"
+ï»¿<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
@@ -8,24 +8,24 @@
   <StackPanel Width="200" VerticalAlignment="Center">
 
 		<StackPanel HorizontalAlignment="Center">
-			<TextBlock FontSize="18" Text="Authorization"></TextBlock>
+			<TextBlock FontSize="18" Text="ÐÐ²Ñ‚Ð¾Ñ€Ð¸Ð·Ð°Ñ†Ð¸Ñ"></TextBlock>
         </StackPanel>
 
         <StackPanel Height="20"></StackPanel>
         
-        <TextBlock Text="Email"></TextBlock>
+        <TextBlock Text="Ð›Ð¾Ð³Ð¸Ð½"></TextBlock>
         <TextBox x:Name="LoginBox"></TextBox>
 
         <StackPanel Height="10"></StackPanel>
 
-        <TextBlock Text="Password"></TextBlock>
+        <TextBlock Text="ÐŸÐ°Ñ€Ð¾Ð»ÑŒ"></TextBlock>
         <TextBox x:Name="PasswordBox" PasswordChar="*"></TextBox>
 
         <StackPanel Height="20"></StackPanel>
 
-        <Button HorizontalAlignment="Stretch" Content="Enter" Click="Button_Click"></Button>
+        <Button HorizontalAlignment="Stretch" Name="LoginButton" Content="Ð’Ð¾Ð¹Ñ‚Ð¸" Click="Button_Click"></Button>
         
-        <!-- ÂÎÒ ÝÒÎ ÌÛ ÄÎÁÀÂÈËÈ -->
+        
         <TextBlock Name="ErrorMessageTextBlock" Foreground="Red" HorizontalAlignment="Center" TextWrapping="Wrap" Margin="0,10,0,0"></TextBlock>
 
     </StackPanel>

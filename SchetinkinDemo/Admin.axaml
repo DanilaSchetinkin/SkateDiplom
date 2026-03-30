@@ -1,41 +1,41 @@
-<Window xmlns="https://github.com/avaloniaui"
+ï»¿<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="SchetinkinDemo.Admin"
-        Title="Ïàíåëü Àäìèíèñòðàòîðà"
+        Title="ÐŸÐ°Ð½ÐµÐ»ÑŒ ÐÐ´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ‚Ð¾Ñ€Ð°"
         Width="1000" Height="700"
         WindowStartupLocation="CenterScreen"
         Background="#808080">
     
-    <Grid ColumnDefinitions="200, *"> <!-- Äâå êîëîíêè: 200px äëÿ íàâèãàöèè, îñòàëüíîå äëÿ êîíòåíòà -->
+    <Grid ColumnDefinitions="200, *"> <!-- Ð”Ð²Ðµ ÐºÐ¾Ð»Ð¾Ð½ÐºÐ¸: 200px Ð´Ð»Ñ Ð½Ð°Ð²Ð¸Ð³Ð°Ñ†Ð¸Ð¸, Ð¾ÑÑ‚Ð°Ð»ÑŒÐ½Ð¾Ðµ Ð´Ð»Ñ ÐºÐ¾Ð½Ñ‚ÐµÐ½Ñ‚Ð° -->
 
-        <!-- 1. ÏÀÍÅËÜ ÍÀÂÈÃÀÖÈÈ (ñëåâà) -->
+        <!-- 1. ÐŸÐÐÐ•Ð›Ð¬ ÐÐÐ’Ð˜Ð“ÐÐ¦Ð˜Ð˜ (ÑÐ»ÐµÐ²Ð°) -->
         <Border Grid.Column="0"  BorderBrush="#E0E0E0" BorderThickness="0,0,1,0">
             <StackPanel Spacing="10" Margin="10">
                 
-                <!-- Ïàíåëü ïîëüçîâàòåëÿ -->
+                <!-- ÐŸÐ°Ð½ÐµÐ»ÑŒ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ñ -->
                 <Border Padding="10"  CornerRadius="5">
                     <StackPanel Spacing="5">
-                        <TextBlock Name="FioTextBlock" FontWeight="Bold" Text="Name Surname"/>
-                        <TextBlock Name="RoleTextBlock" Foreground="Gray" Text="Role"/>
-                        <Button Name="LogoutButton" Content="Exit" Click="LogoutButton_Click" HorizontalAlignment="Stretch" Margin="0,10,0,0"/>
+                        <TextBlock Name="FioTextBlock" FontWeight="Bold" Text="Ð˜Ð¼Ñ Ð¤Ð°Ð¼Ð»Ð¸Ñ"/>
+                        <TextBlock Name="RoleTextBlock"  Text="Role"/>
+                        <Button Name="LogoutButton" Content="Ð’Ñ‹Ð¹Ñ‚Ð¸" Background="Red" Click="LogoutButton_Click" HorizontalAlignment="Stretch" Margin="0,10,0,0"/>
                     </StackPanel>
                 </Border>
                 
-                <!-- Êíîïêè íàâèãàöèè -->
-                <Button Name="ProductsButton" Content="Product" Click="ProductsButton_Click" HorizontalAlignment="Stretch"/>
-                <Button Name="OrdersButton" Content="Order" Click="OrdersButton_Click" HorizontalAlignment="Stretch"/>
+                <!-- ÐšÐ½Ð¾Ð¿ÐºÐ¸ Ð½Ð°Ð²Ð¸Ð³Ð°Ñ†Ð¸Ð¸ -->
+                <Button Name="ProductsButton" Content="Ð¢Ð¾Ð²Ð°Ñ€Ñ‹" Click="ProductsButton_Click" HorizontalAlignment="Stretch"/>
+                <Button Name="OrdersButton" Content="Ð—Ð°ÐºÐ°Ð·Ñ‹" Click="OrdersButton_Click" HorizontalAlignment="Stretch"/>
                 
-                <!-- Êíîïêà "Ïîëüçîâàòåëè" áóäåò âèäíà òîëüêî àäìèíèñòðàòîðó -->
-                <Button Name="UsersButton" Content="Users" Click="UsersButton_Click" HorizontalAlignment="Stretch"/>
+                <!-- ÐšÐ½Ð¾Ð¿ÐºÐ° "ÐŸÐ¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ð¸" Ð±ÑƒÐ´ÐµÑ‚ Ð²Ð¸Ð´Ð½Ð° Ñ‚Ð¾Ð»ÑŒÐºÐ¾ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ‚Ð¾Ñ€Ñƒ -->
+                <Button Name="UsersButton" Content="ÐŸÐ¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ð¸" Click="UsersButton_Click" HorizontalAlignment="Stretch"/>
 
             </StackPanel>
         </Border>
 
-        <!-- 2. ÎÁËÀÑÒÜ ÊÎÍÒÅÍÒÀ (ñïðàâà) -->
-        <!-- Ýòî "ýêðàí", â êîòîðîì ìû áóäåì ïîêàçûâàòü äðóãèå View (ProductsView, OrdersView è ò.ä.) -->
+        <!-- 2. ÐžÐ‘Ð›ÐÐ¡Ð¢Ð¬ ÐšÐžÐÐ¢Ð•ÐÐ¢Ð (ÑÐ¿Ñ€Ð°Ð²Ð°) -->
+        <!-- Ð­Ñ‚Ð¾ "ÑÐºÑ€Ð°Ð½", Ð² ÐºÐ¾Ñ‚Ð¾Ñ€Ð¾Ð¼ Ð¼Ñ‹ Ð±ÑƒÐ´ÐµÐ¼ Ð¿Ð¾ÐºÐ°Ð·Ñ‹Ð²Ð°Ñ‚ÑŒ Ð´Ñ€ÑƒÐ³Ð¸Ðµ View (ProductsView, OrdersView Ð¸ Ñ‚.Ð´.) -->
         <ContentControl Grid.Column="1" Name="MainContentControl" Margin="15"/>
 
     </Grid>

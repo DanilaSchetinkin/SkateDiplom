@@ -1,4 +1,4 @@
-using Avalonia.Controls;
+п»їusing Avalonia.Controls;
 using Avalonia.Interactivity;
 using Microsoft.EntityFrameworkCore;
 using SchetinkinDemo.Models;
@@ -9,25 +9,29 @@ namespace SchetinkinDemo
     public partial class ProductEditorWindow : Window
     {
         private readonly int? _productId;
-        // DbContext теперь не нужен как поле класса
+        private Product _product; // Р•РґРёРЅС‹Р№ РѕР±СЉРµРєС‚ РґР»СЏ СЂР°Р±РѕС‚С‹
 
-        // Конструктор для НОВОГО товара
+        // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РґР»СЏ РќРћР’РћР“Рћ С‚РѕРІР°СЂР°
         public ProductEditorWindow()
         {
             InitializeComponent();
             _productId = null;
-            Title = "Создание нового товара";
+            _product = new Product { IsActive = true }; // РќРѕРІС‹Р№ С‚РѕРІР°СЂ СЃСЂР°Р·Сѓ Р°РєС‚РёРІРµРЅ
+            Title = "РЎРѕР·РґР°РЅРёРµ РЅРѕРІРѕРіРѕ С‚РѕРІР°СЂР°";
             LoadComboBoxes();
+            // Р•СЃР»Рё РІ XAML РµСЃС‚СЊ РїСЂРёРІСЏР·РєРё, РјРѕР¶РЅРѕ СѓСЃС‚Р°РЅРѕРІРёС‚СЊ DataContext = _product
+            // DataContext = _product;
         }
 
-        // Конструктор для РЕДАКТИРОВАНИЯ
+        // РљРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РґР»СЏ Р Р•Р”РђРљРўРР РћР’РђРќРРЇ
         public ProductEditorWindow(int productId)
         {
             InitializeComponent();
             _productId = productId;
-            Title = $"Редактирование товара (ID: {productId})";
+            Title = $"Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ С‚РѕРІР°СЂР° (ID: {productId})";
             LoadComboBoxes();
-            LoadProductData();
+            LoadProductData(); // Р—Р°РіСЂСѓР¶Р°РµС‚ _product РёР· Р‘Р”
+            // DataContext = _product;
         }
 
         private void LoadComboBoxes()
@@ -40,55 +44,57 @@ namespace SchetinkinDemo
         private void LoadProductData()
         {
             using var context = new SkateshopDbContext();
-            var product = context.Products.Find(_productId.Value);
-            if (product == null) return;
+            _product = context.Products.Find(_productId.Value);
+            if (_product == null) return;
 
-            NameTextBox.Text = product.Name;
-            SkuTextBox.Text = product.Sku;
-            PriceTextBox.Text = product.Price.ToString("F2");
-            StockTextBox.Text = product.StockQuantity.ToString();
+            // Р—Р°РїРѕР»РЅСЏРµРј РїРѕР»СЏ С„РѕСЂРјС‹ Р·РЅР°С‡РµРЅРёСЏРјРё РёР· _product
+            NameTextBox.Text = _product.Name;
+            SkuTextBox.Text = _product.Sku;
+            PriceTextBox.Text = _product.Price.ToString("F2");
+            StockTextBox.Text = _product.StockQuantity.ToString();
 
+            // РЈСЃС‚Р°РЅР°РІР»РёРІР°РµРј РІС‹Р±СЂР°РЅРЅС‹Рµ Р±СЂРµРЅРґ Рё РєР°С‚РµРіРѕСЂРёСЋ
             BrandComboBox.SelectedItem = (BrandComboBox.ItemsSource as System.Collections.IEnumerable)
-                .OfType<Brand>().FirstOrDefault(b => b.Id == product.BrandId);
-
+                .OfType<Brand>().FirstOrDefault(b => b.Id == _product.BrandId);
             CategoryComboBox.SelectedItem = (CategoryComboBox.ItemsSource as System.Collections.IEnumerable)
-                .OfType<Category>().FirstOrDefault(c => c.Id == product.CategoryId);
+                .OfType<Category>().FirstOrDefault(c => c.Id == _product.CategoryId);
+
+            // Р•СЃР»Рё РµСЃС‚СЊ CheckBox РґР»СЏ IsActive
+            if (ActiveCheckBox != null)
+                ActiveCheckBox.IsChecked = _product.IsActive;
         }
 
-        // --- ГЛАВНОЕ ИЗМЕНЕНИЕ ---
         private void SaveButton_Click(object? sender, RoutedEventArgs e)
         {
+            // Р’Р°Р»РёРґР°С†РёСЏ РѕР±СЏР·Р°С‚РµР»СЊРЅС‹С… РїРѕР»РµР№
             if (string.IsNullOrWhiteSpace(NameTextBox.Text) || BrandComboBox.SelectedItem == null || CategoryComboBox.SelectedItem == null)
             {
+                // TODO: РїРѕРєР°Р·Р°С‚СЊ СЃРѕРѕР±С‰РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ
                 return;
             }
 
-            // Создаем "чистый" объект Product с данными из формы
-            var productData = new Product
-            {
-                Name = NameTextBox.Text,
-                Sku = SkuTextBox.Text,
-                Price = decimal.TryParse(PriceTextBox.Text, out var price) ? price : 0,
-                StockQuantity = int.TryParse(StockTextBox.Text, out var stock) ? stock : 0,
-                BrandId = (BrandComboBox.SelectedItem as Brand)?.Id,
-                CategoryId = (CategoryComboBox.SelectedItem as Category)?.Id ?? 0
-            };
+            // РљРѕРїРёСЂСѓРµРј РґР°РЅРЅС‹Рµ РёР· С„РѕСЂРјС‹ РІ _product
+            _product.Name = NameTextBox.Text;
+            _product.Sku = SkuTextBox.Text;
+            _product.Price = decimal.TryParse(PriceTextBox.Text, out var price) ? price : 0;
+            _product.StockQuantity = int.TryParse(StockTextBox.Text, out var stock) ? stock : 0;
+            _product.BrandId = (BrandComboBox.SelectedItem as Brand)?.Id;
+            _product.CategoryId = (CategoryComboBox.SelectedItem as Category)?.Id ?? 0;
 
-            // Создаем новый DbContext ТОЛЬКО для операции сохранения
+            // Р•СЃР»Рё CheckBox РїСЂРёСЃСѓС‚СЃС‚РІСѓРµС‚, РёСЃРїРѕР»СЊР·СѓРµРј РµРіРѕ Р·РЅР°С‡РµРЅРёРµ
+            if (ActiveCheckBox != null)
+                _product.IsActive = ActiveCheckBox.IsChecked == true;
+
             using var context = new SkateshopDbContext();
 
-            if (_productId == null) // СЦЕНАРИЙ: Создание
+            if (_productId == null) // РЎРѕР·РґР°РЅРёРµ
             {
-                // Просто добавляем новый объект
-                context.Products.Add(productData);
+                context.Products.Add(_product);
             }
-            else // СЦЕНАРИЙ: Редактирование
+            else // Р РµРґР°РєС‚РёСЂРѕРІР°РЅРёРµ
             {
-                // Присваиваем ID нашему "чистому" объекту
-                productData.Id = _productId.Value;
-
-                // ЯВНО говорим Entity Framework, что этот объект нужно ОБНОВИТЬ, а не создать
-                context.Products.Update(productData);
+                // РџСЂРёСЃРѕРµРґРёРЅСЏРµРј РѕР±СЉРµРєС‚ Рє РєРѕРЅС‚РµРєСЃС‚Сѓ Рё РїРѕРјРµС‡Р°РµРј РєР°Рє РёР·РјРµРЅС‘РЅРЅС‹Р№
+                context.Products.Update(_product);
             }
 
             try
@@ -98,9 +104,8 @@ namespace SchetinkinDemo
             }
             catch (DbUpdateException ex)
             {
-                // Если ошибка все еще здесь, мы ее поймаем и увидим
-                System.Diagnostics.Debug.WriteLine($"ОШИБКА СОХРАНЕНИЯ: {ex.InnerException?.Message}");
-                // TODO: Показать сообщение пользователю
+                System.Diagnostics.Debug.WriteLine($"РћРЁРР‘РљРђ РЎРћРҐР РђРќР•РќРРЇ: {ex.InnerException?.Message}");
+                // TODO: РџРѕРєР°Р·Р°С‚СЊ СЃРѕРѕР±С‰РµРЅРёРµ РїРѕР»СЊР·РѕРІР°С‚РµР»СЋ
             }
         }
 
