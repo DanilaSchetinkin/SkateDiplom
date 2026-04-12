@@ -9,7 +9,7 @@ public partial class ProductReview
 
     public int ProductId { get; set; }
 
-    public int CustomerId { get; set; }
+    public int UserId { get; set; }
 
     public short Rating { get; set; }
 
@@ -17,7 +17,7 @@ public partial class ProductReview
 
     public DateTime? CreatedAt { get; set; }
 
-    public virtual User Customer { get; set; } = null!;
-
     public virtual Product Product { get; set; } = null!;
+
+    public virtual User User { get; set; } = null!;
 }

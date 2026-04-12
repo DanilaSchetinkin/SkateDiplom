@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SchetinkinDemo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+58189e14acdb7c40971bf0d88339667f7c3b6411")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+892e32e806be46af276113e2fbb10cbd229b83a8")]
 [assembly: System.Reflection.AssemblyProductAttribute("SchetinkinDemo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SchetinkinDemo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

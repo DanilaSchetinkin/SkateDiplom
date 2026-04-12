@@ -1,153 +1,153 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\",
+  "WorkspaceRootPath": "C:\\Users\\HomePc\\source\\repos\\Skgit\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\clientordersview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\clientordersview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\clientordersview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\messagebox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\messagebox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\messagebox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\cartview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\cartview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\cartview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\clientordersview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\clientordersview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\clientordersview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\cartview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\cartview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\cartview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\app.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\app.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\app.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\app.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\app.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\app.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\mainwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\mainwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\clientwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\clientwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\clientwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\clientwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\clientwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\clientwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\confirmdialog.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\confirmdialog.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\confirmdialog.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\confirmdialog.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\confirmdialog.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\confirmdialog.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\schetinkindemo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\schetinkindemo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\schetinkindemo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\orderview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\orderview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\orderview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\admin.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\admin.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\admin.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\clientcatalogview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\clientcatalogview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\clientcatalogview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\clientcatalogview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\clientcatalogview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\clientcatalogview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\cartmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\cartmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\cartmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\productsview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\productsview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\productsview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\productsview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\productsview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\productsview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\productviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\productviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\productviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\producteditorwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\producteditorwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\producteditorwindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\producteditorwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\producteditorwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\producteditorwindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\orderdetailswindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\orderdetailswindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\orderdetailswindow.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\orderdetailswindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\orderdetailswindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\orderdetailswindow.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\orderitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\orderitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\orderitemviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\admin.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\admin.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\admin.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\orderviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\orderview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\orderview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\orderview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\userviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\userview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\userview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\userview.axaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\userview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\userview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\userview.axaml||{6D5344A2-2FCD-49DE-A09D-6A14FD1B1224}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\schetinkindemo\\schetinkindemo\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|c:\\users\\homepc\\source\\repos\\skgit\\schetinkindemo\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1E6814C0-C51E-406A-BFC1-14E614EB4071}|SchetinkinDemo\\SchetinkinDemo.csproj|solutionrelative:schetinkindemo\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -200,48 +200,45 @@
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "CartView.axaml",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\CartView.axaml",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\CartView.axaml",
               "RelativeDocumentMoniker": "SchetinkinDemo\\CartView.axaml",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\CartView.axaml",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\CartView.axaml",
               "RelativeToolTip": "SchetinkinDemo\\CartView.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-30T13:30:35.218Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-30T13:30:35.218Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "ClientOrdersView.axaml",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ClientOrdersView.axaml",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ClientOrdersView.axaml",
               "RelativeDocumentMoniker": "SchetinkinDemo\\ClientOrdersView.axaml",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ClientOrdersView.axaml",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ClientOrdersView.axaml",
               "RelativeToolTip": "SchetinkinDemo\\ClientOrdersView.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2026-03-30T13:31:52.623Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-30T13:31:52.623Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "CartView.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\CartView.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\CartView.axaml.cs",
               "RelativeDocumentMoniker": "SchetinkinDemo\\CartView.axaml.cs",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\CartView.axaml.cs",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\CartView.axaml.cs",
               "RelativeToolTip": "SchetinkinDemo\\CartView.axaml.cs",
               "ViewState": "AgIAAFIAAAAAAAAAAAAtwGIAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-30T13:30:35.123Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-30T13:30:35.123Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "ClientOrdersView.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ClientOrdersView.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ClientOrdersView.axaml.cs",
               "RelativeDocumentMoniker": "SchetinkinDemo\\ClientOrdersView.axaml.cs",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ClientOrdersView.axaml.cs",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ClientOrdersView.axaml.cs",
               "RelativeToolTip": "SchetinkinDemo\\ClientOrdersView.axaml.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAAAC8AAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAADAAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-30T13:31:52.498Z",
               "EditorCaption": ""
@@ -250,35 +247,33 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MessageBox.cs",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\MessageBox.cs",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\MessageBox.cs",
               "RelativeDocumentMoniker": "SchetinkinDemo\\MessageBox.cs",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\MessageBox.cs",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\MessageBox.cs",
               "RelativeToolTip": "SchetinkinDemo\\MessageBox.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-30T14:06:02.325Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-30T14:06:02.325Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "App.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\App.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\App.axaml.cs",
               "RelativeDocumentMoniker": "SchetinkinDemo\\App.axaml.cs",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\App.axaml.cs",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\App.axaml.cs",
               "RelativeToolTip": "SchetinkinDemo\\App.axaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-04T10:03:09.434Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-04T10:03:09.434Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
               "Title": "MainWindow.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\MainWindow.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\MainWindow.axaml.cs",
               "RelativeDocumentMoniker": "SchetinkinDemo\\MainWindow.axaml.cs",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\MainWindow.axaml.cs",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\MainWindow.axaml.cs",
               "RelativeToolTip": "SchetinkinDemo\\MainWindow.axaml.cs",
               "ViewState": "AgIAABMAAAAAAAAAAAAkwCYAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -288,9 +283,9 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "App.axaml",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\App.axaml",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\App.axaml",
               "RelativeDocumentMoniker": "SchetinkinDemo\\App.axaml",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\App.axaml",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\App.axaml",
               "RelativeToolTip": "SchetinkinDemo\\App.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-02-04T10:03:00.619Z"
@@ -299,9 +294,9 @@
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "MainWindow.axaml",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\MainWindow.axaml",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\MainWindow.axaml",
               "RelativeDocumentMoniker": "SchetinkinDemo\\MainWindow.axaml",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\MainWindow.axaml",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\MainWindow.axaml",
               "RelativeToolTip": "SchetinkinDemo\\MainWindow.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-01-18T12:51:35.613Z"
@@ -310,9 +305,9 @@
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "ClientWindow.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ClientWindow.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ClientWindow.axaml.cs",
               "RelativeDocumentMoniker": "SchetinkinDemo\\ClientWindow.axaml.cs",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ClientWindow.axaml.cs",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ClientWindow.axaml.cs",
               "RelativeToolTip": "SchetinkinDemo\\ClientWindow.axaml.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAwwC0AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -322,9 +317,9 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\Program.cs",
               "RelativeDocumentMoniker": "SchetinkinDemo\\Program.cs",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\Program.cs",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\Program.cs",
               "RelativeToolTip": "SchetinkinDemo\\Program.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAUwBYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -334,9 +329,9 @@
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "ClientWindow.axaml",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ClientWindow.axaml",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ClientWindow.axaml",
               "RelativeDocumentMoniker": "SchetinkinDemo\\ClientWindow.axaml",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ClientWindow.axaml",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ClientWindow.axaml",
               "RelativeToolTip": "SchetinkinDemo\\ClientWindow.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-03-30T13:33:25.917Z"
@@ -345,9 +340,9 @@
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "ConfirmDialog.axaml",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ConfirmDialog.axaml",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ConfirmDialog.axaml",
               "RelativeDocumentMoniker": "SchetinkinDemo\\ConfirmDialog.axaml",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ConfirmDialog.axaml",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ConfirmDialog.axaml",
               "RelativeToolTip": "SchetinkinDemo\\ConfirmDialog.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-02-11T10:39:10.033Z"
@@ -356,9 +351,9 @@
               "$type": "Document",
               "DocumentIndex": 13,
               "Title": "ConfirmDialog.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ConfirmDialog.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ConfirmDialog.axaml.cs",
               "RelativeDocumentMoniker": "SchetinkinDemo\\ConfirmDialog.axaml.cs",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ConfirmDialog.axaml.cs",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ConfirmDialog.axaml.cs",
               "RelativeToolTip": "SchetinkinDemo\\ConfirmDialog.axaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -368,9 +363,9 @@
               "$type": "Document",
               "DocumentIndex": 15,
               "Title": "OrderView.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\OrderView.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\OrderView.axaml.cs",
               "RelativeDocumentMoniker": "SchetinkinDemo\\OrderView.axaml.cs",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\OrderView.axaml.cs",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\OrderView.axaml.cs",
               "RelativeToolTip": "SchetinkinDemo\\OrderView.axaml.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAjwEoAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -380,9 +375,9 @@
               "$type": "Document",
               "DocumentIndex": 16,
               "Title": "Admin.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\Admin.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\Admin.axaml.cs",
               "RelativeDocumentMoniker": "SchetinkinDemo\\Admin.axaml.cs",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\Admin.axaml.cs",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\Admin.axaml.cs",
               "RelativeToolTip": "SchetinkinDemo\\Admin.axaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -392,9 +387,9 @@
               "$type": "Document",
               "DocumentIndex": 14,
               "Title": "SchetinkinDemo.csproj",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\SchetinkinDemo.csproj",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\SchetinkinDemo.csproj",
               "RelativeDocumentMoniker": "SchetinkinDemo\\SchetinkinDemo.csproj",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\SchetinkinDemo.csproj",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\SchetinkinDemo.csproj",
               "RelativeToolTip": "SchetinkinDemo\\SchetinkinDemo.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -404,9 +399,9 @@
               "$type": "Document",
               "DocumentIndex": 17,
               "Title": "ClientCatalogView.axaml",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ClientCatalogView.axaml",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ClientCatalogView.axaml",
               "RelativeDocumentMoniker": "SchetinkinDemo\\ClientCatalogView.axaml",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ClientCatalogView.axaml",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ClientCatalogView.axaml",
               "RelativeToolTip": "SchetinkinDemo\\ClientCatalogView.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-03-30T13:28:38.911Z"
@@ -415,9 +410,9 @@
               "$type": "Document",
               "DocumentIndex": 18,
               "Title": "ClientCatalogView.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ClientCatalogView.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ClientCatalogView.axaml.cs",
               "RelativeDocumentMoniker": "SchetinkinDemo\\ClientCatalogView.axaml.cs",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ClientCatalogView.axaml.cs",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ClientCatalogView.axaml.cs",
               "RelativeToolTip": "SchetinkinDemo\\ClientCatalogView.axaml.cs",
               "ViewState": "AgIAADwAAAAAAAAAAAAgwEoAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -427,9 +422,9 @@
               "$type": "Document",
               "DocumentIndex": 19,
               "Title": "CartManager.cs",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\CartManager.cs",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\CartManager.cs",
               "RelativeDocumentMoniker": "SchetinkinDemo\\CartManager.cs",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\CartManager.cs",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\CartManager.cs",
               "RelativeToolTip": "SchetinkinDemo\\CartManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -439,9 +434,9 @@
               "$type": "Document",
               "DocumentIndex": 20,
               "Title": "ProductsView.axaml",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ProductsView.axaml",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ProductsView.axaml",
               "RelativeDocumentMoniker": "SchetinkinDemo\\ProductsView.axaml",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ProductsView.axaml",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ProductsView.axaml",
               "RelativeToolTip": "SchetinkinDemo\\ProductsView.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-01-18T13:11:44.69Z"
@@ -450,9 +445,9 @@
               "$type": "Document",
               "DocumentIndex": 24,
               "Title": "ProductEditorWindow.axaml",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ProductEditorWindow.axaml",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ProductEditorWindow.axaml",
               "RelativeDocumentMoniker": "SchetinkinDemo\\ProductEditorWindow.axaml",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ProductEditorWindow.axaml",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ProductEditorWindow.axaml",
               "RelativeToolTip": "SchetinkinDemo\\ProductEditorWindow.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-01-18T13:24:11.718Z"
@@ -461,9 +456,9 @@
               "$type": "Document",
               "DocumentIndex": 23,
               "Title": "ProductEditorWindow.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ProductEditorWindow.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ProductEditorWindow.axaml.cs",
               "RelativeDocumentMoniker": "SchetinkinDemo\\ProductEditorWindow.axaml.cs",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ProductEditorWindow.axaml.cs",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ProductEditorWindow.axaml.cs",
               "RelativeToolTip": "SchetinkinDemo\\ProductEditorWindow.axaml.cs",
               "ViewState": "AgIAAE8AAAAAAAAAAAAwwFoAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -473,9 +468,9 @@
               "$type": "Document",
               "DocumentIndex": 21,
               "Title": "ProductsView.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ProductsView.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ProductsView.axaml.cs",
               "RelativeDocumentMoniker": "SchetinkinDemo\\ProductsView.axaml.cs",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ProductsView.axaml.cs",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ProductsView.axaml.cs",
               "RelativeToolTip": "SchetinkinDemo\\ProductsView.axaml.cs",
               "ViewState": "AgIAAEwAAAAAAAAAAAAUwF0AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -485,9 +480,9 @@
               "$type": "Document",
               "DocumentIndex": 22,
               "Title": "ProductViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ProductViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ProductViewModel.cs",
               "RelativeDocumentMoniker": "SchetinkinDemo\\ProductViewModel.cs",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\ProductViewModel.cs",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\ProductViewModel.cs",
               "RelativeToolTip": "SchetinkinDemo\\ProductViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -497,9 +492,9 @@
               "$type": "Document",
               "DocumentIndex": 25,
               "Title": "OrderDetailsWindow.axaml",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\OrderDetailsWindow.axaml",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\OrderDetailsWindow.axaml",
               "RelativeDocumentMoniker": "SchetinkinDemo\\OrderDetailsWindow.axaml",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\OrderDetailsWindow.axaml",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\OrderDetailsWindow.axaml",
               "RelativeToolTip": "SchetinkinDemo\\OrderDetailsWindow.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-02-11T09:59:18.359Z"
@@ -508,9 +503,9 @@
               "$type": "Document",
               "DocumentIndex": 26,
               "Title": "OrderDetailsWindow.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\OrderDetailsWindow.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\OrderDetailsWindow.axaml.cs",
               "RelativeDocumentMoniker": "SchetinkinDemo\\OrderDetailsWindow.axaml.cs",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\OrderDetailsWindow.axaml.cs",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\OrderDetailsWindow.axaml.cs",
               "RelativeToolTip": "SchetinkinDemo\\OrderDetailsWindow.axaml.cs",
               "ViewState": "AgIAACQAAAAAAAAAAAAqwEQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -520,9 +515,9 @@
               "$type": "Document",
               "DocumentIndex": 27,
               "Title": "OrderItemViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\OrderItemViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\OrderItemViewModel.cs",
               "RelativeDocumentMoniker": "SchetinkinDemo\\OrderItemViewModel.cs",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\OrderItemViewModel.cs",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\OrderItemViewModel.cs",
               "RelativeToolTip": "SchetinkinDemo\\OrderItemViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -532,9 +527,9 @@
               "$type": "Document",
               "DocumentIndex": 28,
               "Title": "Admin.axaml",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\Admin.axaml",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\Admin.axaml",
               "RelativeDocumentMoniker": "SchetinkinDemo\\Admin.axaml",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\Admin.axaml",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\Admin.axaml",
               "RelativeToolTip": "SchetinkinDemo\\Admin.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-01-18T13:04:34.675Z"
@@ -543,9 +538,9 @@
               "$type": "Document",
               "DocumentIndex": 29,
               "Title": "OrderViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\OrderViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\OrderViewModel.cs",
               "RelativeDocumentMoniker": "SchetinkinDemo\\OrderViewModel.cs",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\OrderViewModel.cs",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\OrderViewModel.cs",
               "RelativeToolTip": "SchetinkinDemo\\OrderViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -555,9 +550,9 @@
               "$type": "Document",
               "DocumentIndex": 30,
               "Title": "OrderView.axaml",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\OrderView.axaml",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\OrderView.axaml",
               "RelativeDocumentMoniker": "SchetinkinDemo\\OrderView.axaml",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\OrderView.axaml",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\OrderView.axaml",
               "RelativeToolTip": "SchetinkinDemo\\OrderView.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-02-04T09:34:04.252Z"
@@ -566,9 +561,9 @@
               "$type": "Document",
               "DocumentIndex": 31,
               "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\Models\\User.cs",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\Models\\User.cs",
               "RelativeDocumentMoniker": "SchetinkinDemo\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\Models\\User.cs",
               "RelativeToolTip": "SchetinkinDemo\\Models\\User.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAA5wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -578,9 +573,9 @@
               "$type": "Document",
               "DocumentIndex": 34,
               "Title": "UserView.axaml",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\UserView.axaml",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\UserView.axaml",
               "RelativeDocumentMoniker": "SchetinkinDemo\\UserView.axaml",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\UserView.axaml",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\UserView.axaml",
               "RelativeToolTip": "SchetinkinDemo\\UserView.axaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2026-02-09T09:50:28.723Z"
@@ -589,9 +584,9 @@
               "$type": "Document",
               "DocumentIndex": 33,
               "Title": "UserView.axaml.cs",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\UserView.axaml.cs",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\UserView.axaml.cs",
               "RelativeDocumentMoniker": "SchetinkinDemo\\UserView.axaml.cs",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\UserView.axaml.cs",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\UserView.axaml.cs",
               "RelativeToolTip": "SchetinkinDemo\\UserView.axaml.cs",
               "ViewState": "AgIAAC8AAAAAAAAAAAAIwEgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -601,9 +596,9 @@
               "$type": "Document",
               "DocumentIndex": 32,
               "Title": "UserViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\UserViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\UserViewModel.cs",
               "RelativeDocumentMoniker": "SchetinkinDemo\\UserViewModel.cs",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\UserViewModel.cs",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\UserViewModel.cs",
               "RelativeToolTip": "SchetinkinDemo\\UserViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -613,9 +608,9 @@
               "$type": "Document",
               "DocumentIndex": 35,
               "Title": "Order.cs",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\Models\\Order.cs",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\Models\\Order.cs",
               "RelativeDocumentMoniker": "SchetinkinDemo\\Models\\Order.cs",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\Models\\Order.cs",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\Models\\Order.cs",
               "RelativeToolTip": "SchetinkinDemo\\Models\\Order.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAUwB8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -625,9 +620,9 @@
               "$type": "Document",
               "DocumentIndex": 36,
               "Title": "Product.cs",
-              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\Models\\Product.cs",
+              "DocumentMoniker": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\Models\\Product.cs",
               "RelativeDocumentMoniker": "SchetinkinDemo\\Models\\Product.cs",
-              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\Models\\Product.cs",
               "RelativeToolTip": "SchetinkinDemo\\Models\\Product.cs",
               "ViewState": "AgIAABsAAAAAAAAAAAAAACkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

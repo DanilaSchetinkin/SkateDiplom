@@ -3507,11 +3507,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\SchetinkinDemo.csproj",
+      "projectUniqueName": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\SchetinkinDemo.csproj",
       "projectName": "SchetinkinDemo",
-      "projectPath": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\SchetinkinDemo.csproj",
+      "projectPath": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\SchetinkinDemo.csproj",
       "packagesPath": "C:\\Users\\HomePc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HomePc\\source\\repos\\SchetinkinDemo\\SchetinkinDemo\\obj\\",
+      "outputPath": "C:\\Users\\HomePc\\source\\repos\\Skgit\\SchetinkinDemo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "I:\\Visual Studio SDK\\NuGetPackages"

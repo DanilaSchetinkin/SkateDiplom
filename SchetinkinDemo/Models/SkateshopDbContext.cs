@@ -25,6 +25,12 @@ public partial class SkateshopDbContext : DbContext
 
     public virtual DbSet<CategoryPath> CategoryPaths { get; set; }
 
+    public virtual DbSet<Conversation> Conversations { get; set; }
+
+    public virtual DbSet<ConversationParticipant> ConversationParticipants { get; set; }
+
+    public virtual DbSet<Message> Messages { get; set; }
+
     public virtual DbSet<Order> Orders { get; set; }
 
     public virtual DbSet<OrderItem> OrderItems { get; set; }
@@ -43,9 +49,11 @@ public partial class SkateshopDbContext : DbContext
 
     public virtual DbSet<UserAddress> UserAddresses { get; set; }
 
+    public virtual DbSet<UserLogin> UserLogins { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseNpgsql("Host=localhost;port=5432;Database=skateshop_db;Username=skateuser;password=1234321");
+        => optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=skateshop_db;Username=skateuser;Password=1234321");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -126,6 +134,7 @@ public partial class SkateshopDbContext : DbContext
             entity.ToTable("categories");
 
             entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Categoryimage).HasColumnName("categoryimage");
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("now()")
                 .HasColumnName("created_at");
@@ -152,6 +161,72 @@ public partial class SkateshopDbContext : DbContext
             entity.HasOne(d => d.Descendant).WithMany(p => p.CategoryPathDescendants)
                 .HasForeignKey(d => d.DescendantId)
                 .HasConstraintName("category_paths_descendant_id_fkey");
+        });
+
+        modelBuilder.Entity<Conversation>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("conversations_pkey");
+
+            entity.ToTable("conversations");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.CreatedAt)
+                .HasDefaultValueSql("now()")
+                .HasColumnName("created_at");
+            entity.Property(e => e.Title)
+                .HasMaxLength(255)
+                .HasColumnName("title");
+            entity.Property(e => e.Type)
+                .HasMaxLength(50)
+                .HasColumnName("type");
+        });
+
+        modelBuilder.Entity<ConversationParticipant>(entity =>
+        {
+            entity.HasKey(e => new { e.ConversationId, e.UserId }).HasName("conversation_participants_pkey");
+
+            entity.ToTable("conversation_participants");
+
+            entity.Property(e => e.ConversationId).HasColumnName("conversation_id");
+            entity.Property(e => e.UserId).HasColumnName("user_id");
+            entity.Property(e => e.JoinedAt)
+                .HasDefaultValueSql("now()")
+                .HasColumnName("joined_at");
+
+            entity.HasOne(d => d.Conversation).WithMany(p => p.ConversationParticipants)
+                .HasForeignKey(d => d.ConversationId)
+                .HasConstraintName("conversation_participants_conversation_id_fkey");
+
+            entity.HasOne(d => d.User).WithMany(p => p.ConversationParticipants)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("conversation_participants_user_id_fkey");
+        });
+
+        modelBuilder.Entity<Message>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("messages_pkey");
+
+            entity.ToTable("messages");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.ConversationId).HasColumnName("conversation_id");
+            entity.Property(e => e.IsRead)
+                .HasDefaultValue(false)
+                .HasColumnName("is_read");
+            entity.Property(e => e.MessageText).HasColumnName("message_text");
+            entity.Property(e => e.SenderId).HasColumnName("sender_id");
+            entity.Property(e => e.SentAt)
+                .HasDefaultValueSql("now()")
+                .HasColumnName("sent_at");
+
+            entity.HasOne(d => d.Conversation).WithMany(p => p.Messages)
+                .HasForeignKey(d => d.ConversationId)
+                .HasConstraintName("messages_conversation_id_fkey");
+
+            entity.HasOne(d => d.Sender).WithMany(p => p.Messages)
+                .HasForeignKey(d => d.SenderId)
+                .OnDelete(DeleteBehavior.Restrict)
+                .HasConstraintName("messages_sender_id_fkey");
         });
 
         modelBuilder.Entity<Order>(entity =>
@@ -276,6 +351,7 @@ public partial class SkateshopDbContext : DbContext
             entity.Property(e => e.Price)
                 .HasPrecision(10, 2)
                 .HasColumnName("price");
+            entity.Property(e => e.Productimage).HasColumnName("productimage");
             entity.Property(e => e.Sku)
                 .HasMaxLength(50)
                 .HasColumnName("sku");
@@ -300,22 +376,24 @@ public partial class SkateshopDbContext : DbContext
 
             entity.ToTable("product_reviews");
 
+            entity.HasIndex(e => new { e.ProductId, e.UserId }, "product_reviews_product_id_user_id_key").IsUnique();
+
             entity.Property(e => e.Id).HasColumnName("id");
             entity.Property(e => e.Comment).HasColumnName("comment");
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("now()")
                 .HasColumnName("created_at");
-            entity.Property(e => e.CustomerId).HasColumnName("customer_id");
             entity.Property(e => e.ProductId).HasColumnName("product_id");
             entity.Property(e => e.Rating).HasColumnName("rating");
-
-            entity.HasOne(d => d.Customer).WithMany(p => p.ProductReviews)
-                .HasForeignKey(d => d.CustomerId)
-                .HasConstraintName("product_reviews_customer_id_fkey");
+            entity.Property(e => e.UserId).HasColumnName("user_id");
 
             entity.HasOne(d => d.Product).WithMany(p => p.ProductReviews)
                 .HasForeignKey(d => d.ProductId)
                 .HasConstraintName("product_reviews_product_id_fkey");
+
+            entity.HasOne(d => d.User).WithMany(p => p.ProductReviews)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("product_reviews_customer_id_fkey");
         });
 
         modelBuilder.Entity<Promotion>(entity =>
@@ -423,6 +501,8 @@ public partial class SkateshopDbContext : DbContext
 
             entity.ToTable("user_addresses", tb => tb.HasComment("Адреса доставки, привязанные к пользователям."));
 
+            entity.HasIndex(e => new { e.UserId, e.AddressName }, "user_addresses_user_id_address_name_key").IsUnique();
+
             entity.Property(e => e.Id)
                 .HasDefaultValueSql("nextval('customer_addresses_id_seq'::regclass)")
                 .HasColumnName("id");
@@ -464,6 +544,23 @@ public partial class SkateshopDbContext : DbContext
             entity.HasOne(d => d.User).WithMany(p => p.UserAddresses)
                 .HasForeignKey(d => d.UserId)
                 .HasConstraintName("customer_addresses_customer_id_fkey");
+        });
+
+        modelBuilder.Entity<UserLogin>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("user_logins_pkey");
+
+            entity.ToTable("user_logins");
+
+            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.LoginTime)
+                .HasDefaultValueSql("now()")
+                .HasColumnName("login_time");
+            entity.Property(e => e.UserId).HasColumnName("user_id");
+
+            entity.HasOne(d => d.User).WithMany(p => p.UserLogins)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("user_logins_user_id_fkey");
         });
 
         OnModelCreatingPartial(modelBuilder);

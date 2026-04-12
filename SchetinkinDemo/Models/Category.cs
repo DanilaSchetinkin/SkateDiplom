@@ -13,6 +13,8 @@ public partial class Category
 
     public DateTime? CreatedAt { get; set; }
 
+    public string? Categoryimage { get; set; }
+
     public virtual ICollection<CategoryPath> CategoryPathAncestors { get; set; } = new List<CategoryPath>();
 
     public virtual ICollection<CategoryPath> CategoryPathDescendants { get; set; } = new List<CategoryPath>();

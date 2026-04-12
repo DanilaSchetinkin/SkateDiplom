@@ -27,6 +27,10 @@ public partial class User
 
     public virtual Cart? Cart { get; set; }
 
+    public virtual ICollection<ConversationParticipant> ConversationParticipants { get; set; } = new List<ConversationParticipant>();
+
+    public virtual ICollection<Message> Messages { get; set; } = new List<Message>();
+
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
 
     public virtual ICollection<ProductReview> ProductReviews { get; set; } = new List<ProductReview>();
@@ -34,4 +38,6 @@ public partial class User
     public virtual Role? Role { get; set; }
 
     public virtual ICollection<UserAddress> UserAddresses { get; set; } = new List<UserAddress>();
+
+    public virtual ICollection<UserLogin> UserLogins { get; set; } = new List<UserLogin>();
 }
