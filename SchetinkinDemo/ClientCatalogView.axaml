@@ -1,64 +1,156 @@
-﻿<UserControl xmlns="https://github.com/avaloniaui"
+<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:local="clr-namespace:SchetinkinDemo"
+             mc:Ignorable="d"
              x:Class="SchetinkinDemo.ClientCatalogView"
              x:CompileBindings="False">
-  <DockPanel Margin="10">
-    <!-- Панель фильтров и сортировки -->
-    <StackPanel DockPanel.Dock="Top" Spacing="10" Margin="0,0,0,10">
-      <Grid ColumnDefinitions="Auto,*,Auto,Auto">
-        <TextBlock Grid.Column="0" Text="Категория:" VerticalAlignment="Center"/>
-        <ComboBox Grid.Column="1" Name="CategoryComboBox" Margin="5,0" 
-                  HorizontalAlignment="Stretch" 
-                  SelectionChanged="CategoryComboBox_SelectionChanged"/>
-        <TextBox Grid.Column="2" Name="SearchTextBox" Watermark="Поиск по названию..." Width="200" Margin="5,0"/>
-        <Button Grid.Column="3" Name="SearchButton" Content="Поиск" Click="SearchButton_Click"/>
-      </Grid>
-      <Grid ColumnDefinitions="Auto,*,Auto">
-        <TextBlock Grid.Column="0" Text="Сортировка:" VerticalAlignment="Center"/>
-        <ComboBox Grid.Column="1" Name="SortComboBox" Margin="5,0" 
-                  HorizontalAlignment="Stretch" 
-                  SelectionChanged="SortComboBox_SelectionChanged">
-          <ComboBoxItem Tag="NameAsc">По названию (А-Я)</ComboBoxItem>
-          <ComboBoxItem Tag="NameDesc">По названию (Я-А)</ComboBoxItem>
-          <ComboBoxItem Tag="PriceAsc">По цене (возрастание)</ComboBoxItem>
-          <ComboBoxItem Tag="PriceDesc">По цене (убывание)</ComboBoxItem>
-        </ComboBox>
-      </Grid>
-    </StackPanel>
 
-    <!-- Список товаров -->
-    <ListBox Name="ProductsListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-      <ListBox.ItemTemplate>
-        <DataTemplate>
-          <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Padding="10" Margin="5">
-            <Grid ColumnDefinitions="Auto,*,Auto">
-              <!-- Изображение -->
-              <Image Grid.Column="0" Source="{Binding ImagePath}" Width="80" Height="80" 
-                     Stretch="Uniform" Margin="0,0,10,0"/>
-              <!-- Информация о товаре -->
-              <StackPanel Grid.Column="1" Spacing="5">
-                <TextBlock FontSize="16" FontWeight="Bold" Text="{Binding Name}" />
-                <StackPanel Orientation="Horizontal" Spacing="10">
-                  <TextBlock Text="{Binding Sku, StringFormat='Артикул: {0}'}" />
-                  <TextBlock Text="{Binding BrandName, StringFormat='Бренд: {0}'}" Foreground="Gray"/>
-                  <TextBlock Text="{Binding CategoryName, StringFormat='Категория: {0}'}" Foreground="Gray"/>
+  <UserControl.Resources>
+    <local:FilePathToBitmapConverter x:Key="FilePathToBitmap"/>
+  </UserControl.Resources>
+
+  <UserControl.Styles>
+    <!-- Обычная кнопка категории -->
+    <Style Selector="Button.category-btn">
+      <Setter Property="Background" Value="#2C2F3A"/>
+      <Setter Property="Foreground" Value="#9096B0"/>
+      <Setter Property="BorderThickness" Value="0"/>
+      <Setter Property="CornerRadius" Value="20"/>
+      <Setter Property="Padding" Value="16,8"/>
+      <Setter Property="FontSize" Value="13"/>
+      <Setter Property="Cursor" Value="Hand"/>
+    </Style>
+    <Style Selector="Button.category-btn:pointerover /template/ ContentPresenter">
+      <Setter Property="Background" Value="#353848"/>
+    </Style>
+    <!-- Активная кнопка категории -->
+    <Style Selector="Button.category-btn-active">
+      <Setter Property="Background" Value="#4F52A0"/>
+      <Setter Property="Foreground" Value="White"/>
+      <Setter Property="BorderThickness" Value="0"/>
+      <Setter Property="CornerRadius" Value="20"/>
+      <Setter Property="Padding" Value="16,8"/>
+      <Setter Property="FontSize" Value="13"/>
+      <Setter Property="FontWeight" Value="SemiBold"/>
+      <Setter Property="Cursor" Value="Hand"/>
+    </Style>
+  </UserControl.Styles>
+
+  <DockPanel>
+
+    <!-- ===== ШАПКА: поиск + сортировка ===== -->
+    <Border DockPanel.Dock="Top" Background="#23262F"
+            CornerRadius="12" Margin="0,0,0,10" Padding="16,12">
+      <Grid ColumnDefinitions="*,Auto,Auto">
+
+        <!-- Поиск -->
+        <Border Grid.Column="0" Background="#1E2029" CornerRadius="20"
+                BorderBrush="#3A3F52" BorderThickness="1">
+          <Grid ColumnDefinitions="Auto,*,Auto">
+            <TextBlock Grid.Column="0" Text="🔍" FontSize="14"
+                       VerticalAlignment="Center" Margin="12,0,6,0"
+                       Foreground="#7078A0"/>
+            <TextBox Grid.Column="1" Name="SearchTextBox"
+                     Watermark="Поиск товаров..."
+                     Background="Transparent" BorderThickness="0"
+                     Padding="0,8" Foreground="#E8EAF0"
+                     CaretBrush="#E8EAF0"/>
+            <Button Grid.Column="2" Name="SearchButton"
+                    Content="Найти"
+                    Padding="14,6" CornerRadius="16" Margin="4"
+                    Background="#4F52A0" Foreground="White"
+                    FontSize="12" FontWeight="SemiBold"
+                    Click="SearchButton_Click"/>
+          </Grid>
+        </Border>
+
+        <!-- Сортировка -->
+        <TextBlock Grid.Column="1" Text="Сортировка:" VerticalAlignment="Center"
+                   Foreground="#7078A0" FontSize="12" Margin="16,0,8,0"/>
+        <ComboBox Grid.Column="2" Name="SortComboBox"
+                  Width="160" Padding="10,7" CornerRadius="8"
+                  BorderBrush="#3A3F52" Background="#1E2029"
+                  SelectionChanged="SortComboBox_SelectionChanged">
+          <ComboBoxItem Tag="NameAsc">По названию (А–Я)</ComboBoxItem>
+          <ComboBoxItem Tag="NameDesc">По названию (Я–А)</ComboBoxItem>
+          <ComboBoxItem Tag="PriceAsc">По цене ↑</ComboBoxItem>
+          <ComboBoxItem Tag="PriceDesc">По цене ↓</ComboBoxItem>
+        </ComboBox>
+
+      </Grid>
+    </Border>
+
+    <!-- ===== КНОПКИ КАТЕГОРИЙ ===== -->
+    <Border DockPanel.Dock="Top" Margin="0,0,0,14">
+      <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                    VerticalScrollBarVisibility="Disabled">
+        <StackPanel Name="CategoriesPanel"
+                    Orientation="Horizontal" Spacing="8"/>
+      </ScrollViewer>
+    </Border>
+
+    <!-- ===== ЗАГОЛОВОК ТЕКУЩЕЙ КАТЕГОРИИ ===== -->
+    <Border DockPanel.Dock="Top" Margin="0,0,0,10">
+      <TextBlock Name="CategoryTitleTextBlock"
+                 FontSize="20" FontWeight="Bold"
+                 Foreground="#E8EAF0"/>
+    </Border>
+
+    <!-- ===== СПИСОК ТОВАРОВ ===== -->
+    <ScrollViewer>
+      <ItemsControl Name="ProductsItemsControl">
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <Border Background="#2C2F3A" CornerRadius="12" Padding="14"
+                    Margin="0,0,0,8" BoxShadow="0 2 10 0 #14000000">
+              <Grid ColumnDefinitions="88,*,Auto">
+
+                <!-- Картинка -->
+                <Border Grid.Column="0" CornerRadius="10" ClipToBounds="True"
+                        Background="#1E2029" Width="80" Height="80">
+                  <Image Source="{Binding ImagePath, Converter={StaticResource FilePathToBitmap}}"
+                         Stretch="Uniform"/>
+                </Border>
+
+                <!-- Инфо -->
+                <StackPanel Grid.Column="1" Spacing="5" Margin="14,0"
+                            VerticalAlignment="Center">
+                  <TextBlock FontSize="15" FontWeight="Bold"
+                             Text="{Binding Name}" Foreground="#E8EAF0"/>
+                  <StackPanel Orientation="Horizontal" Spacing="8">
+                    <Border Background="#2A2D3E" CornerRadius="4" Padding="6,2">
+                      <TextBlock Text="{Binding Sku, StringFormat='SKU: {0}'}"
+                                 FontSize="11" Foreground="#7986CB"/>
+                    </Border>
+                    <TextBlock Text="{Binding BrandName}"
+                               FontSize="12" Foreground="#9096B0"/>
+                  </StackPanel>
+                  <TextBlock Text="{Binding StockQuantity, StringFormat='В наличии: {0} шт.'}"
+                             FontSize="12" Foreground="#7078A0"/>
                 </StackPanel>
-                <TextBlock Text="{Binding StockQuantity, StringFormat='Остаток: {0} шт.'}" Foreground="Gray"/>
-              </StackPanel>
-              <!-- Цена и кнопка -->
-              <StackPanel Grid.Column="2" Spacing="5" HorizontalAlignment="Right">
-                <TextBlock FontSize="18" FontWeight="Bold" Text="{Binding Price, StringFormat='{}{0:c}'}" 
-                           Foreground="Green"/>
-                <Button Content="В корзину" Click="AddToCartButton_Click" 
-                        Tag="{Binding Id}" Padding="10,5"/>
-              </StackPanel>
-            </Grid>
-          </Border>
-        </DataTemplate>
-      </ListBox.ItemTemplate>
-    </ListBox>
+
+                <!-- Цена + кнопка -->
+                <StackPanel Grid.Column="2" Spacing="8"
+                            HorizontalAlignment="Right" VerticalAlignment="Center">
+                  <TextBlock FontSize="20" FontWeight="Bold"
+                             Text="{Binding Price, StringFormat='{}{0:c}'}"
+                             Foreground="#66BB6A" HorizontalAlignment="Right"/>
+                  <Button Content="В корзину 🛒"
+                          Click="AddToCartButton_Click"
+                          Tag="{Binding Id}"
+                          Padding="12,8" CornerRadius="20"
+                          Background="#4F52A0" Foreground="White"
+                          FontWeight="SemiBold" FontSize="12"/>
+                </StackPanel>
+
+              </Grid>
+            </Border>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>
+    </ScrollViewer>
+
   </DockPanel>
 </UserControl>

@@ -1,35 +1,82 @@
-﻿<UserControl xmlns="https://github.com/avaloniaui"
+<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:local="clr-namespace:SchetinkinDemo"
+             mc:Ignorable="d"
              x:Class="SchetinkinDemo.CartView"
              x:CompileBindings="False">
-  <DockPanel Margin="10">
-    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="10" Margin="0,0,0,10">
-      <Button Name="CheckoutButton" Content="Оформить заказ" Click="CheckoutButton_Click" IsEnabled="False"/>
-      <Button Name="ClearCartButton" Content="Очистить корзину" Click="ClearCartButton_Click" IsEnabled="False"/>
-    </StackPanel>
 
-    <ListBox Name="CartItemsListBox">
+  <UserControl.Resources>
+    <local:FilePathToBitmapConverter x:Key="FilePathToBitmap"/>
+  </UserControl.Resources>
+
+  <DockPanel>
+
+    <!-- Заголовок -->
+    <Border DockPanel.Dock="Top" Margin="0,0,0,16">
+      <TextBlock Text="Корзина" FontSize="22" FontWeight="Bold" Foreground="#E8EAF0"/>
+    </Border>
+
+    <!-- Итог и кнопки -->
+    <Border DockPanel.Dock="Bottom" Background="#2C2F3A" CornerRadius="10" Padding="16"
+            Margin="0,16,0,0" BoxShadow="0 2 8 0 #0A000000">
+      <Grid ColumnDefinitions="*,Auto">
+        <TextBlock Name="TotalTextBlock" FontSize="20" FontWeight="Bold"
+                   Foreground="#E8EAF0" VerticalAlignment="Center"/>
+        <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="10">
+          <Button Name="ClearCartButton" Content="🗑  Очистить"
+                  Padding="14,10" CornerRadius="8"
+                  Background="#3A1E20" Foreground="#C62828"
+                  FontWeight="SemiBold"
+                  IsEnabled="False"
+                  Click="ClearCartButton_Click"/>
+          <Button Name="CheckoutButton" Content="Оформить заказ  →"
+                  Padding="18,10" CornerRadius="8"
+                  Background="#1A1A2E" Foreground="White"
+                  FontWeight="SemiBold" FontSize="14"
+                  IsEnabled="False"
+                  Click="CheckoutButton_Click"/>
+        </StackPanel>
+      </Grid>
+    </Border>
+
+    <!-- Список товаров -->
+    <ListBox Name="CartItemsListBox"
+             Background="Transparent" BorderThickness="0"
+             ScrollViewer.HorizontalScrollBarVisibility="Disabled">
       <ListBox.ItemTemplate>
         <DataTemplate>
-          <Border BorderBrush="LightGray" BorderThickness="0,0,0,1" Padding="10">
-            <Grid ColumnDefinitions="Auto,*,Auto,Auto,Auto">
-              <Image Grid.Column="0" Source="{Binding ImagePath}" Width="50" Height="50" Stretch="Uniform" Margin="0,0,10,0"/>
-              <TextBlock Grid.Column="1" Text="{Binding ProductName}" VerticalAlignment="Center"/>
-              <TextBlock Grid.Column="2" Text="{Binding Price, StringFormat='{}{0:c}'}" VerticalAlignment="Center" Margin="10,0"/>
-              <NumericUpDown Grid.Column="3" Value="{Binding Quantity}" Minimum="1" Maximum="100" 
-                             VerticalAlignment="Center" Width="80" 
-                             ValueChanged="Quantity_ValueChanged" Tag="{Binding ProductId}"/>
-              <Button Grid.Column="4" Content="Удалить" Click="RemoveItem_Click" Tag="{Binding ProductId}" 
-                      Margin="10,0,0,0" Padding="10,5"/>
+          <Border Background="#2C2F3A" CornerRadius="10" Padding="16" Margin="0,0,0,8"
+                  BoxShadow="0 2 8 0 #0A000000">
+            <Grid ColumnDefinitions="64,*,Auto,Auto,Auto">
+              <Border Grid.Column="0" CornerRadius="8" ClipToBounds="True"
+                      Background="#23262F" Width="56" Height="56">
+                <Image Source="{Binding ImagePath, Converter={StaticResource FilePathToBitmap}}" Stretch="Uniform"/>
+              </Border>
+              <TextBlock Grid.Column="1" Text="{Binding ProductName}"
+                         VerticalAlignment="Center" FontWeight="SemiBold"
+                         Foreground="#E8EAF0" Margin="12,0"/>
+              <TextBlock Grid.Column="2"
+                         Text="{Binding Price, StringFormat='{}{0:c}'}"
+                         VerticalAlignment="Center" FontWeight="Bold"
+                         Foreground="#66BB6A" Margin="12,0"/>
+              <NumericUpDown Grid.Column="3" Value="{Binding Quantity}"
+                             Minimum="1" Maximum="100"
+                             VerticalAlignment="Center" Width="120"
+                             ValueChanged="Quantity_ValueChanged"
+                             Tag="{Binding ProductId}"/>
+              <Button Grid.Column="4" Content="✕"
+                      Click="RemoveItem_Click" Tag="{Binding ProductId}"
+                      Margin="10,0,0,0" Padding="10,8" CornerRadius="8"
+                      Background="#3A1E20" Foreground="#C62828"
+                      FontWeight="Bold"/>
             </Grid>
           </Border>
         </DataTemplate>
       </ListBox.ItemTemplate>
     </ListBox>
 
-    <TextBlock DockPanel.Dock="Bottom" Name="TotalTextBlock" FontSize="18" FontWeight="Bold" Margin="0,10,0,0" HorizontalAlignment="Right"/>
   </DockPanel>
 </UserControl>
+

@@ -1,5 +1,6 @@
 ﻿using System;
 using Avalonia;
+using Avalonia.ReactiveUI;
 
 namespace SchetinkinDemo
 {
@@ -17,6 +18,7 @@ namespace SchetinkinDemo
             => AppBuilder.Configure<App>()
                 .UsePlatformDetect()
                 .WithInterFont()
-                .LogToTrace();
+                .LogToTrace()
+                .UseReactiveUI();
     }
 }

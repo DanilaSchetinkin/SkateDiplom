@@ -42,7 +42,7 @@ namespace SchetinkinDemo
                 {
                     Id = o.Id,
                     OrderNumber = o.OrderNumber,
-                    CreatedAt = o.CreatedAt ?? DateTime.Now,
+                    CreatedAt = o.CreatedAt ?? DateTime.UtcNow,
                     Status = o.Status
                 })
                 .ToListAsync();

@@ -1,0 +1,63 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="420" d:DesignHeight="600"
+             x:CompileBindings="False"
+             x:Class="SchetinkinDemo.ChatView">
+
+  <Border Background="#2C2F3A" CornerRadius="12" BoxShadow="0 2 12 0 #0F000000">
+    <Grid RowDefinitions="*,Auto">
+
+      <!-- Список сообщений -->
+      <ListBox Name="MessagesListBox" Grid.Row="0"
+               Background="Transparent" BorderThickness="0"
+               Padding="12,12,12,4"
+               ItemsSource="{Binding Messages}">
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <Border CornerRadius="10" Padding="10,8" Margin="0,3"
+                    MaxWidth="320"
+                    HorizontalAlignment="{Binding HorizontalAlignment}"
+                    Background="{Binding BackgroundColor}"
+                    BoxShadow="0 1 4 0 #0A000000">
+              <StackPanel Spacing="2">
+                <TextBlock Text="{Binding SenderName}" FontWeight="Bold"
+                           FontSize="12" Foreground="{Binding SenderColor}"/>
+                <TextBlock Text="{Binding MessageText}" TextWrapping="Wrap"
+                           FontSize="14" Foreground="#E8EAF0"/>
+                <TextBlock Text="{Binding SentAt, StringFormat='dd.MM.yyyy HH:mm'}"
+                           FontSize="10" HorizontalAlignment="Right" Foreground="#6068A0"/>
+              </StackPanel>
+            </Border>
+          </DataTemplate>
+        </ListBox.ItemTemplate>
+      </ListBox>
+
+      <!-- Поле ввода -->
+      <Border Grid.Row="1" Background="#23262F" Padding="12"
+              BorderBrush="#E8EAF0" BorderThickness="0,1,0,0">
+        <Grid ColumnDefinitions="*,Auto" ColumnSpacing="8">
+          <TextBox Name="MessageTextBox"
+                   Watermark="Введите сообщение..."
+                   AcceptsReturn="True" TextWrapping="Wrap"
+                   MaxHeight="90" Padding="12,10"
+                   CornerRadius="20"
+                   BorderBrush="#3A3F52"
+                   Background="#2C2F3A"
+                   Text="{Binding NewMessageText}"/>
+          <Button Name="SendButton" Grid.Column="1"
+                  Content="➤"
+                  FontSize="16"
+                  Width="44" Height="44"
+                  CornerRadius="22"
+                  Background="#1A1A2E" Foreground="White"
+                  VerticalAlignment="Bottom"
+                  Command="{Binding SendMessageCommand}"/>
+        </Grid>
+      </Border>
+
+    </Grid>
+  </Border>
+</UserControl>
+

@@ -1,78 +1,130 @@
-// Admin.axaml.cs
+ï»¿// Admin.axaml.cs
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using SchetinkinDemo.Models;
+using System;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace SchetinkinDemo
 {
     public partial class Admin : Window
     {
-        // Ïîëÿ äëÿ õðàíåíèÿ äàííûõ î ïîëüçîâàòåëå, åñëè îíè íóæíû
+        // ÐŸÐ¾Ð»Ñ Ð´Ð»Ñ Ñ…Ñ€Ð°Ð½ÐµÐ½Ð¸Ñ Ð´Ð°Ð½Ð½Ñ‹Ñ… Ð¾ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ðµ, ÐµÑÐ»Ð¸ Ð¾Ð½Ð¸ Ð½ÑƒÐ¶Ð½Ñ‹
         private readonly int _userId;
         private readonly string _userRole;
 
-        // Êîíñòðóêòîð ïî óìîë÷àíèþ äëÿ äèçàéíåðà
+        // ÐšÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€ Ð¿Ð¾ ÑƒÐ¼Ð¾Ð»Ñ‡Ð°Ð½Ð¸ÑŽ Ð´Ð»Ñ Ð´Ð¸Ð·Ð°Ð¹Ð½ÐµÑ€Ð°
         public Admin()
         {
             InitializeComponent();
         }
 
-        // Ãëàâíûé êîíñòðóêòîð, êîòîðûé âû áóäåòå âûçûâàòü èç îêíà âõîäà
-        // ÏÐÈÌÅÐ: new Admin(user.Id, user.Role.Name, user.FirstName + " " + user.LastName);
+        // Ð“Ð»Ð°Ð²Ð½Ñ‹Ð¹ ÐºÐ¾Ð½ÑÑ‚Ñ€ÑƒÐºÑ‚Ð¾Ñ€, ÐºÐ¾Ñ‚Ð¾Ñ€Ñ‹Ð¹ Ð²Ñ‹ Ð±ÑƒÐ´ÐµÑ‚Ðµ Ð²Ñ‹Ð·Ñ‹Ð²Ð°Ñ‚ÑŒ Ð¸Ð· Ð¾ÐºÐ½Ð° Ð²Ñ…Ð¾Ð´Ð°
+        // ÐŸÐ Ð˜ÐœÐ•Ð : new Admin(user.Id, user.Role.Name, user.FirstName + " " + user.LastName);
         public Admin(int userId, string userRole, string userFio)
         {
             InitializeComponent();
             _userId = userId;
             _userRole = userRole;
 
-            // Çàïîëíÿåì èíôîðìàöèþ î ïîëüçîâàòåëå
+            // Ð—Ð°Ð¿Ð¾Ð»Ð½ÑÐµÐ¼ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸ÑŽ Ð¾ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»Ðµ
             FioTextBlock.Text = userFio;
             RoleTextBlock.Text = userRole;
+            Title = userRole.ToLower() == "admin" ? "ÐŸÐ°Ð½ÐµÐ»ÑŒ Ð°Ð´Ð¼Ð¸Ð½Ð¸ÑÑ‚Ñ€Ð°Ñ‚Ð¾Ñ€Ð°" : "ÐŸÐ°Ð½ÐµÐ»ÑŒ ÑÐ¾Ñ‚Ñ€ÑƒÐ´Ð½Ð¸ÐºÐ°";
 
-            // Íàñòðàèâàåì âèäèìîñòü êíîïîê â çàâèñèìîñòè îò ðîëè
+            // ÐÐ°ÑÑ‚Ñ€Ð°Ð¸Ð²Ð°ÐµÐ¼ Ð²Ð¸Ð´Ð¸Ð¼Ð¾ÑÑ‚ÑŒ ÐºÐ½Ð¾Ð¿Ð¾Ðº Ð² Ð·Ð°Ð²Ð¸ÑÐ¸Ð¼Ð¾ÑÑ‚Ð¸ Ð¾Ñ‚ Ñ€Ð¾Ð»Ð¸
             SetupInterfaceForRole();
 
-            // Ïðè çàïóñêå ñðàçó îòêðûâàåì ýêðàí ñ òîâàðàìè
+            // ÐŸÑ€Ð¸ Ð·Ð°Ð¿ÑƒÑÐºÐµ ÑÑ€Ð°Ð·Ñƒ Ð¾Ñ‚ÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ ÑÐºÑ€Ð°Ð½ Ñ Ñ‚Ð¾Ð²Ð°Ñ€Ð°Ð¼Ð¸
             ProductsButton_Click(null, null);
         }
 
         private void SetupInterfaceForRole()
         {
-            // Åñëè ðîëü íå "admin", ñêðûâàåì êíîïêó óïðàâëåíèÿ ïîëüçîâàòåëÿìè
-            if (_userRole.ToLower() != "admin")
-            {
-                UsersButton.IsVisible = false;
-            }
+            var isAdmin = _userRole.ToLower() == "admin";
+            UsersButton.IsVisible = isAdmin;
+            CustomerSupportInboxButton.IsVisible = isAdmin;
+            StaffSupportInboxButton.IsVisible = isAdmin;
+            StaffTechSupportButton.IsVisible = !isAdmin;
         }
 
-        // --- Îáðàáîò÷èêè êíîïîê íàâèãàöèè ---
+        // --- ÐžÐ±Ñ€Ð°Ð±Ð¾Ñ‚Ñ‡Ð¸ÐºÐ¸ ÐºÐ½Ð¾Ð¿Ð¾Ðº Ð½Ð°Ð²Ð¸Ð³Ð°Ñ†Ð¸Ð¸ ---
 
         private void ProductsButton_Click(object? sender, RoutedEventArgs e)
         {
-            // Ñîçäàåì ýêçåìïëÿð íàøåãî UserControl-à è ïîìåùàåì åãî â ContentControl
-            MainContentControl.Content = new ProductsView(); // Èñïîëüçóåì ProductsView, à íå ProductsWindow
+            // Ð¡Ð¾Ð·Ð´Ð°ÐµÐ¼ ÑÐºÐ·ÐµÐ¼Ð¿Ð»ÑÑ€ Ð½Ð°ÑˆÐµÐ³Ð¾ UserControl-Ð° Ð¸ Ð¿Ð¾Ð¼ÐµÑ‰Ð°ÐµÐ¼ ÐµÐ³Ð¾ Ð² ContentControl
+            MainContentControl.Content = new ProductsView(); // Ð˜ÑÐ¿Ð¾Ð»ÑŒÐ·ÑƒÐµÐ¼ ProductsView, Ð° Ð½Ðµ ProductsWindow
         }
 
         private void OrdersButton_Click(object? sender, RoutedEventArgs e)
         {
-            // TODO: Çàìåíèòü íà âàø UserControl äëÿ çàêàçîâ
+            // TODO: Ð—Ð°Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ Ð½Ð° Ð²Ð°Ñˆ UserControl Ð´Ð»Ñ Ð·Ð°ÐºÐ°Ð·Ð¾Ð²
             // MainContentControl.Content = new OrdersView(); 
             MainContentControl.Content = new OrderView();
         }
 
         private void UsersButton_Click(object? sender, RoutedEventArgs e)
         {
-            // TODO: Çàìåíèòü íà âàø UserControl äëÿ ïîëüçîâàòåëåé
+            // TODO: Ð—Ð°Ð¼ÐµÐ½Ð¸Ñ‚ÑŒ Ð½Ð° Ð²Ð°Ñˆ UserControl Ð´Ð»Ñ Ð¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ñ‚ÐµÐ»ÐµÐ¹
             // MainContentControl.Content = new UsersView();
             MainContentControl.Content = new UsersView();
         }
 
         private void LogoutButton_Click(object? sender, RoutedEventArgs e)
         {
-            // Çàêðûâàåì ýòî îêíî è îòêðûâàåì îêíî âõîäà
+            // Ð—Ð°ÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ ÑÑ‚Ð¾ Ð¾ÐºÐ½Ð¾ Ð¸ Ð¾Ñ‚ÐºÑ€Ñ‹Ð²Ð°ÐµÐ¼ Ð¾ÐºÐ½Ð¾ Ð²Ñ…Ð¾Ð´Ð°
             var loginWindow = new MainWindow();
             loginWindow.Show();
             this.Close();
+        }
+
+
+        private void CustomerSupportInboxButton_Click(object? sender, RoutedEventArgs e)
+        {
+            MainContentControl.Content = new SupportInboxView(
+                SupportChatHelper.CustomerSupportConversationType,
+                "ÐžÐ±Ñ€Ð°Ñ‰ÐµÐ½Ð¸Ñ ÐºÐ»Ð¸ÐµÐ½Ñ‚Ð¾Ð²",
+                OpenChatFromInboxAsync,
+                () => ProductsButton_Click(null, null));
+        }
+
+        private void StaffSupportInboxButton_Click(object? sender, RoutedEventArgs e)
+        {
+            MainContentControl.Content = new SupportInboxView(
+                SupportChatHelper.StaffSupportConversationType,
+                "ÐžÐ±Ñ€Ð°Ñ‰ÐµÐ½Ð¸Ñ ÑÐ¾Ñ‚Ñ€ÑƒÐ´Ð½Ð¸ÐºÐ¾Ð² Ð² Ñ‚ÐµÑ…Ð¿Ð¾Ð´Ð´ÐµÑ€Ð¶ÐºÑƒ",
+                OpenChatFromInboxAsync,
+                () => ProductsButton_Click(null, null));
+        }
+
+        private async void StaffTechSupportButton_Click(object? sender, RoutedEventArgs e)
+        {
+            var db = App.ServiceProvider.GetRequiredService<SkateshopDbContext>();
+            var fio = FioTextBlock.Text ?? "";
+            var conversationId = await SupportChatHelper.GetOrCreateStaffSupportAsync(db, _userId, fio);
+            MainContentControl.Content = new ChatView(_userId, conversationId);
+        }
+
+        private async void OpenChatFromInboxAsync(int conversationId)
+        {
+            var db = App.ServiceProvider.GetRequiredService<SkateshopDbContext>();
+            var alreadyMember = await db.ConversationParticipants
+                .AnyAsync(p => p.ConversationId == conversationId && p.UserId == _userId);
+
+            if (!alreadyMember)
+            {
+                db.ConversationParticipants.Add(new ConversationParticipant
+                {
+                    ConversationId = conversationId,
+                    UserId = _userId
+                });
+                await db.SaveChangesAsync();
+            }
+
+            MainContentControl.Content = new ChatView(_userId, conversationId);
         }
     }
 }

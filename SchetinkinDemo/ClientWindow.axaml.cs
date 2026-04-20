@@ -1,5 +1,7 @@
 ﻿using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Microsoft.Extensions.DependencyInjection;
+using SchetinkinDemo.Models;
 
 namespace SchetinkinDemo
 {
@@ -48,5 +50,18 @@ namespace SchetinkinDemo
             loginWindow.Show();
             Close();
         }
+
+        private ChatView? _supportChatView; // Может быть nullable, если не всегда инициализируем
+
+        private async void SupportChatButton_Click(object? sender, RoutedEventArgs e)
+        {
+            var dbContext = App.ServiceProvider.GetRequiredService<SkateshopDbContext>();
+            var conversationId = await SupportChatHelper.GetOrCreateCustomerSupportAsync(
+                dbContext, _userId, _userFio);
+
+            _supportChatView = new ChatView(_userId, conversationId);
+            MainContentControl.Content = _supportChatView;
+        }
+
     }
 }

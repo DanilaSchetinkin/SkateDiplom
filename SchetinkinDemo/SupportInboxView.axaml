@@ -1,0 +1,45 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:CompileBindings="False"
+             x:Class="SchetinkinDemo.SupportInboxView">
+
+  <DockPanel>
+
+    <Border DockPanel.Dock="Top" Margin="0,0,0,16">
+      <TextBlock Name="HeaderTextBlock" FontSize="22" FontWeight="Bold" Foreground="#E8EAF0"/>
+    </Border>
+
+    <Border DockPanel.Dock="Bottom" Margin="0,16,0,0">
+      <StackPanel Orientation="Horizontal" Spacing="10">
+        <Button Name="OpenChatButton" Content="💬  Открыть чат"
+                Padding="16,10" CornerRadius="8"
+                Background="#1A1A2E" Foreground="White"
+                FontWeight="SemiBold"
+                Click="OpenChatButton_Click"/>
+        <Button Name="BackButton" Content="← Назад"
+                Padding="16,10" CornerRadius="8"
+                Background="#23262F" Foreground="#E8EAF0"
+                BorderBrush="#3A3F52" BorderThickness="1"
+                Click="BackButton_Click"/>
+      </StackPanel>
+    </Border>
+
+    <ListBox Name="ConversationsListBox"
+             Background="Transparent" BorderThickness="0">
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <Border Background="#2C2F3A" CornerRadius="10" Padding="16" Margin="0,0,0,8"
+                  BoxShadow="0 2 8 0 #0A000000">
+            <TextBlock Text="{Binding Title}" FontSize="14"
+                       Foreground="#E8EAF0" FontWeight="SemiBold"/>
+          </Border>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+
+  </DockPanel>
+</UserControl>
+

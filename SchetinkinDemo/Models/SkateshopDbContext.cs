@@ -237,7 +237,7 @@ public partial class SkateshopDbContext : DbContext
 
             entity.HasIndex(e => e.OrderNumber, "orders_order_number_key").IsUnique();
 
-            entity.Property(e => e.Id).HasColumnName("id");
+            entity.Property(e => e.Id).HasColumnName("id").ValueGeneratedOnAdd();
             entity.Property(e => e.Comment).HasColumnName("comment");
             entity.Property(e => e.CreatedAt)
                 .HasDefaultValueSql("now()")

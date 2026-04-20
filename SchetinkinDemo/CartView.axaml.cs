@@ -26,11 +26,18 @@ namespace SchetinkinDemo
             InitializeComponent();
             _currentUserId = userId;
             Loaded += CartView_Loaded;
+            Unloaded += CartView_Unloaded;
+            CartManager.CartChanged += RefreshCart;
         }
 
         private void CartView_Loaded(object? sender, RoutedEventArgs e)
         {
             RefreshCart();
+        }
+
+        private void CartView_Unloaded(object? sender, RoutedEventArgs e)
+        {
+            CartManager.CartChanged -= RefreshCart;
         }
 
         private void RefreshCart()
@@ -43,9 +50,9 @@ namespace SchetinkinDemo
 
         private void Quantity_ValueChanged(object? sender, NumericUpDownValueChangedEventArgs e)
         {
-            if (sender is NumericUpDown nud && nud.Tag is int productId)
+            if (sender is NumericUpDown nud && nud.Tag is int productId && nud.Value.HasValue)
             {
-                CartManager.UpdateQuantity(productId, (int)nud.Value);
+                CartManager.UpdateQuantity(productId, (int)nud.Value.Value);
                 RefreshCart();
             }
         }
@@ -69,12 +76,16 @@ namespace SchetinkinDemo
         {
             using var context = new SkateshopDbContext();
 
+            var total = CartManager.Items.Sum(i => i.Total);
+
             var order = new Order
             {
-                OrderNumber = GenerateOrderNumber(),
+                OrderNumber = GenerateOrderNumber(context),
                 CustomerId = _currentUserId,
-                CreatedAt = DateTime.Now,
-                Status = "Новый"
+                CreatedAt = DateTime.UtcNow,
+                UpdatedAt = DateTime.UtcNow,
+                Status = "Новый",
+                TotalAmount = total
             };
             context.Orders.Add(order);
             await context.SaveChangesAsync();
@@ -99,11 +110,12 @@ namespace SchetinkinDemo
             await messageBox.ShowDialog((Window)this.VisualRoot);
         }
 
-        private string GenerateOrderNumber()
+        private string GenerateOrderNumber(SkateshopDbContext context)
         {
-            using var context = new SkateshopDbContext();
-            int count = context.Orders.Count() + 1;
-            return $"ORD-{DateTime.Now:yyyyMMdd}-{count}";
+            // Используем случайный суффикс чтобы избежать коллизий при одновременных заказах
+            var datePart = DateTime.UtcNow.ToString("yyyyMMdd");
+            var random = new Random().Next(1000, 9999);
+            return $"ORD-{datePart}-{random}";
         }
     }
 }

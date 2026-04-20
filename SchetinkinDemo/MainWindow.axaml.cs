@@ -13,6 +13,18 @@ namespace SchetinkinDemo
     {
         private int _failedAttempts = 0;
 
+        /// <summary>Роли, для которых открывается клиентское окно магазина (остальные — сотрудники).</summary>
+        private static bool IsClientPortalRole(string? roleName)
+        {
+            if (string.IsNullOrWhiteSpace(roleName))
+                return true;
+            return roleName.Trim().ToLowerInvariant() switch
+            {
+                "customer" or "client" or "user" or "клиент" or "покупатель" or "guest" => true,
+                _ => false
+            };
+        }
+
         public MainWindow()
         {
             InitializeComponent();
@@ -57,16 +69,17 @@ namespace SchetinkinDemo
 
                 string userFio = $"{user.FirstName} {user.LastName}".Trim();
 
-                // Открываем окно в зависимости от роли
-                if (user.Role?.Name?.ToLower() == "admin")
-                {
-                    var adminWindow = new Admin(user.Id, user.Role.Name, userFio);
-                    adminWindow.Show();
-                }
-                else // предполагаем, что остальные пользователи — клиенты
+                // Клиентский портал — только для ролей «клиент»; остальные (админ, менеджер, сотрудник) — панель сотрудника с поддержкой
+                if (IsClientPortalRole(user.Role?.Name))
                 {
                     var clientWindow = new ClientWindow(user.Id, userFio);
                     clientWindow.Show();
+                }
+                else
+                {
+                    var roleLabel = user.Role?.Name ?? "Сотрудник";
+                    var adminWindow = new Admin(user.Id, roleLabel, userFio);
+                    adminWindow.Show();
                 }
 
                 // Закрываем окно входа

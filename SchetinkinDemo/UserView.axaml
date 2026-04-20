@@ -1,41 +1,45 @@
-﻿<UserControl xmlns="https://github.com/avaloniaui"
+<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d"
              x:Class="SchetinkinDemo.UsersView"
              Loaded="UsersView_Loaded"
              x:CompileBindings="False">
 
-  <DockPanel Margin="10">
-    <TextBlock DockPanel.Dock="Top" Text="Управление пользователями" FontSize="18" FontWeight="Bold" Margin="0,0,0,10"/>
-    
-   <ListBox Name="UsersListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-  <ListBox.ItemTemplate>
-    <DataTemplate>
-      <!-- Задаем белый фон для всей "карточки" -->
-      <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Padding="10" Margin="5" Background="White">
-        <Grid ColumnDefinitions="*, Auto" MinWidth="700">
-          
-          <StackPanel Grid.Column="0" Spacing="5">
-            <!-- Задаем черный цвет для текста -->
-            <TextBlock FontWeight="Bold" Text="{Binding FullName}" Foreground="Black" />
-            <TextBlock Text="{Binding Email}" Foreground="Black" /> 
-          </StackPanel>
+  <DockPanel>
 
-          <StackPanel Grid.Column="1" VerticalAlignment="Center">
-            <ComboBox ItemsSource="{Binding AllRoles}"
-          SelectedItem="{Binding UserRole, Mode=OneWay}"
-          DisplayMemberBinding="{Binding Name}"
-          SelectionChanged="RoleComboBox_SelectionChanged" 
-          Width="150"/>
-          </StackPanel>
-          
-        </Grid>
-      </Border>
-    </DataTemplate>
-  </ListBox.ItemTemplate>
-</ListBox>
-    
+    <Border DockPanel.Dock="Top" Margin="0,0,0,16">
+      <TextBlock Text="Пользователи" FontSize="22" FontWeight="Bold" Foreground="#E8EAF0"/>
+    </Border>
+
+    <ListBox Name="UsersListBox"
+             ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+             Background="Transparent" BorderThickness="0">
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <Border Background="#2C2F3A" CornerRadius="10" Padding="16" Margin="0,0,0,8"
+                  BoxShadow="0 2 8 0 #0A000000">
+            <Grid ColumnDefinitions="*,Auto" MinWidth="600">
+              <StackPanel Grid.Column="0" Spacing="4" VerticalAlignment="Center">
+                <TextBlock FontWeight="Bold" FontSize="15"
+                           Text="{Binding FullName}" Foreground="#E8EAF0"/>
+                <TextBlock Text="{Binding Email}" Foreground="#9096B0" FontSize="13"/>
+              </StackPanel>
+              <ComboBox Grid.Column="1"
+                        ItemsSource="{Binding AllRoles}"
+                        SelectedItem="{Binding UserRole, Mode=OneWay}"
+                        DisplayMemberBinding="{Binding Name}"
+                        SelectionChanged="RoleComboBox_SelectionChanged"
+                        Width="160" Padding="10,8" CornerRadius="8"
+                        BorderBrush="#3A3F52"
+                        VerticalAlignment="Center"/>
+            </Grid>
+          </Border>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+
   </DockPanel>
 </UserControl>
+

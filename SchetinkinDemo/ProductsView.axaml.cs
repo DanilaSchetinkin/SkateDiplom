@@ -24,20 +24,20 @@ namespace SchetinkinDemo
         {
             using var context = new SkateshopDbContext();
 
-            // 1. Начинаем строить запрос к таблице Products
+            // 1. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ Products
             IQueryable<Product> query = context.Products;
 
-            // 2. ФИЛЬТРУЕМ: оставляем только те товары, у которых IsActive = true
+            // 2. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ IsActive = true
             query = query.Where(p => p.IsActive == true);
 
-            // 3. Если в поиске есть текст, добавляем еще один фильтр по имени
+            // 3. пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
             if (!string.IsNullOrWhiteSpace(searchText))
             {
                 query = query.Where(p => p.Name.ToLower().Contains(searchText.ToLower()));
             }
 
-            // 4. Преобразуем отфильтрованные "тяжелые" Product в "легкие" ProductViewModel
-            //    и выполняем запрос к базе данных
+            // 4. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ" Product пїЅ "пїЅпїЅпїЅпїЅпїЅпїЅ" ProductViewModel
+            //    пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
             var productViewModels = await query
                 .Select(p => new ProductViewModel
                 {
@@ -47,11 +47,12 @@ namespace SchetinkinDemo
                     Price = p.Price,
                     StockQuantity = p.StockQuantity,
                     BrandName = (p.Brand != null) ? p.Brand.Name : "---",
-                    CategoryName = (p.Category != null) ? p.Category.Name : "---"
+                    CategoryName = (p.Category != null) ? p.Category.Name : "---",
+                    ImagePath = p.Productimage
                 })
                 .ToListAsync();
 
-            // 5. Присваиваем результат нашему ListBox для отображения
+            // 5. пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ ListBox пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
             ProductsListBox.ItemsSource = productViewModels;
         }
 
@@ -70,7 +71,7 @@ namespace SchetinkinDemo
 
         private async void EditButton_Click(object? sender, RoutedEventArgs e)
         {
-            // --- ИЗМЕНЕНИЕ: Получаем выбранный элемент из ListBox ---
+            // --- пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ ListBox ---
             var selectedItem = ProductsListBox.SelectedItem as ProductViewModel;
             if (selectedItem == null) return;
 
@@ -85,27 +86,27 @@ namespace SchetinkinDemo
             var selectedItem = ProductsListBox.SelectedItem as ProductViewModel;
             if (selectedItem == null) return;
 
-            // Сначала показываем диалог подтверждения
-            var dialog = new ConfirmDialog($"Вы уверены, что хотите убрать из продажи товар '{selectedItem.Name}'?");
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+            var dialog = new ConfirmDialog($"пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ '{selectedItem.Name}'?");
             var parentWindow = (Window)this.VisualRoot;
             var result = await dialog.ShowDialog<bool>(parentWindow);
 
-            if (result == true) // Если пользователь нажал "Да"
+            if (result == true) // пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ "пїЅпїЅ"
             {
-                // --- ВОТ ГЛАВНОЕ ИЗМЕНЕНИЕ ---
-                // Мы больше не используем .Remove()
+                // --- пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ ---
+                // пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ .Remove()
                 using (var context = new SkateshopDbContext())
                 {
                     var productToDeactivate = await context.Products.FindAsync(selectedItem.Id);
                     if (productToDeactivate != null)
                     {
-                        // Вместо удаления, мы просто меняем флаг
+                        // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ
                         productToDeactivate.IsActive = false;
                         await context.SaveChangesAsync();
                     }
                 }
 
-                // Обновляем список, чтобы товар исчез из видимости
+                // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
                 await LoadProducts(SearchTextBox.Text);
             }
         }

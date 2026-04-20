@@ -2,24 +2,43 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d"
         x:Class="SchetinkinDemo.ConfirmDialog"
-        Title="ConfirmDialog"
+        Title="РџРѕРґС‚РІРµСЂР¶РґРµРЅРёРµ"
         SizeToContent="Height"
+        Width="360"
         WindowStartupLocation="CenterOwner"
         CanResize="False"
+        Background="#23262F"
         x:CompileBindings="False">
-  <StackPanel Spacing="15" Margin="20">
-    <!-- Текст вопроса будет устанавливаться из кода -->
-    <TextBlock Name="MessageTextBlock" Text="Вы уверены?" TextWrapping="Wrap"/>
-    
-    <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Right">
-      <!-- 
-        IsDefault="True" - кнопка сработает по Enter
-        IsCancel="True" - кнопка сработает по Escape 
-      -->
-      <Button Name="YesButton" Content="Yes" IsDefault="True" Click="YesButton_Click"/>
-      <Button Name="NoButton" Content="No" IsCancel="True" Click="NoButton_Click"/>
+
+  <Border Background="#2C2F3A" Margin="16" CornerRadius="12"
+          BoxShadow="0 4 24 0 #1A000000" Padding="24">
+    <StackPanel Spacing="20">
+
+      <StackPanel Spacing="8">
+        <TextBlock Text="вљ " FontSize="28" HorizontalAlignment="Center"/>
+        <TextBlock Name="MessageTextBlock" Text="Р’С‹ СѓРІРµСЂРµРЅС‹?"
+                   TextWrapping="Wrap" TextAlignment="Center"
+                   FontSize="15" Foreground="#E8EAF0"/>
+      </StackPanel>
+
+      <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center">
+        <Button Name="NoButton" Content="РћС‚РјРµРЅР°"
+                Padding="20,10" CornerRadius="8"
+                Background="#23262F" Foreground="#B0B4C8"
+                BorderBrush="#3A3F52" BorderThickness="1"
+                IsCancel="True"
+                Click="NoButton_Click"/>
+        <Button Name="YesButton" Content="РџРѕРґС‚РІРµСЂРґРёС‚СЊ"
+                Padding="20,10" CornerRadius="8"
+                Background="#C62828" Foreground="White"
+                FontWeight="SemiBold"
+                IsDefault="True"
+                Click="YesButton_Click"/>
+      </StackPanel>
+
     </StackPanel>
-  </StackPanel>
+  </Border>
 </Window>
+

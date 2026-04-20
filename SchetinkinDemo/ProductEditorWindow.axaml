@@ -1,36 +1,111 @@
-﻿<Window xmlns="https://github.com/avaloniaui"
+<Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="750"
+        mc:Ignorable="d"
         x:CompileBindings="False"
         x:Class="SchetinkinDemo.ProductEditorWindow"
         Title="Редактор товара"
-        WindowStartupLocation="CenterOwner">
-  <StackPanel Spacing="10" Margin="20">
-    <TextBlock Text="Название:"/>
-    <TextBox Name="NameTextBox"/>
-    
-    <TextBlock Text="Артикул (SKU):"/>
-    <TextBox Name="SkuTextBox"/>
-    
-    <TextBlock Text="Цена:"/>
-    <TextBox Name="PriceTextBox"/>
-    
-    <TextBlock Text="Остаток:"/>
-    <TextBox Name="StockTextBox"/>
+        Width="460" Height="680"
+        WindowStartupLocation="CenterOwner"
+        Background="#23262F"
+        CanResize="False">
 
-   <TextBlock Text="Брэнд:"/>
-    <ComboBox Name="BrandComboBox" DisplayMemberBinding="{Binding Name}" />
+  <Border Background="#2C2F3A" Margin="20" CornerRadius="12"
+          BoxShadow="0 4 24 0 #1A000000" Padding="28">
+    <DockPanel>
 
-    <TextBlock Text="Категория:"/>
-    <ComboBox Name="CategoryComboBox" DisplayMemberBinding="{Binding Name}" />
+      <TextBlock DockPanel.Dock="Top" Text="Редактор товара"
+                 FontSize="20" FontWeight="Bold" Foreground="#E8EAF0"
+                 Margin="0,0,0,20"/>
 
-      <CheckBox Name="ActiveCheckBox" Content="Товар активен" Margin="5" IsChecked="True"/>
+      <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal"
+                  Spacing="10" HorizontalAlignment="Right" Margin="0,20,0,0">
+        <Button Name="CancelButton" Content="Отменить"
+                Padding="16,10" CornerRadius="8"
+                Background="#23262F" Foreground="#B0B4C8"
+                BorderBrush="#3A3F52" BorderThickness="1"
+                Click="CancelButton_Click"/>
+        <Button Name="SaveButton" Content="💾  Сохранить"
+                Padding="16,10" CornerRadius="8"
+                Background="#1A1A2E" Foreground="White"
+                FontWeight="SemiBold"
+                Click="SaveButton_Click"/>
+      </StackPanel>
 
-    <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Right" Margin="0,20,0,0">
-      <Button Name="SaveButton" Content="Сохранить" Click="SaveButton_Click"/>
-      <Button Name="CancelButton" Content="Отменить" Click="CancelButton_Click"/>
-    </StackPanel>
-  </StackPanel>
+      <ScrollViewer>
+        <StackPanel Spacing="14">
+
+          <!-- Изображение товара -->
+          <StackPanel Spacing="8">
+            <TextBlock Text="Изображение" FontSize="13" Foreground="#B0B4C8" FontWeight="SemiBold"/>
+            <Grid ColumnDefinitions="100,*">
+              <Border Grid.Column="0" Width="90" Height="90" CornerRadius="8"
+                      Background="#23262F" BorderBrush="#3A3F52" BorderThickness="1">
+                <Image Name="ProductImagePreview" Stretch="Uniform" Margin="4"/>
+              </Border>
+              <StackPanel Grid.Column="1" Spacing="6" Margin="12,0,0,0" VerticalAlignment="Center">
+                <Button Name="PickImageButton" Content="📁  Выбрать файл"
+                        Padding="12,8" CornerRadius="8"
+                        Background="#2A2D3E" Foreground="#7986CB"
+                        HorizontalAlignment="Left"
+                        Click="PickImageButton_Click"/>
+                <TextBlock Name="ImagePathTextBlock" Text="Файл не выбран"
+                           FontSize="11" Foreground="#6068A0" TextWrapping="Wrap"/>
+              </StackPanel>
+            </Grid>
+          </StackPanel>
+
+          <StackPanel Spacing="5">
+            <TextBlock Text="Название" FontSize="13" Foreground="#B0B4C8" FontWeight="SemiBold"/>
+            <TextBox Name="NameTextBox" Padding="12,10" CornerRadius="8"
+                     BorderBrush="#3A3F52" Background="#1E2029"/>
+          </StackPanel>
+
+          <StackPanel Spacing="5">
+            <TextBlock Text="Артикул (SKU)" FontSize="13" Foreground="#B0B4C8" FontWeight="SemiBold"/>
+            <TextBox Name="SkuTextBox" Padding="12,10" CornerRadius="8"
+                     BorderBrush="#3A3F52" Background="#1E2029"/>
+          </StackPanel>
+
+          <Grid ColumnDefinitions="*,16,*">
+            <StackPanel Grid.Column="0" Spacing="5">
+              <TextBlock Text="Цена" FontSize="13" Foreground="#B0B4C8" FontWeight="SemiBold"/>
+              <TextBox Name="PriceTextBox" Padding="12,10" CornerRadius="8"
+                       BorderBrush="#3A3F52" Background="#1E2029"/>
+            </StackPanel>
+            <StackPanel Grid.Column="2" Spacing="5">
+              <TextBlock Text="Остаток" FontSize="13" Foreground="#B0B4C8" FontWeight="SemiBold"/>
+              <TextBox Name="StockTextBox" Padding="12,10" CornerRadius="8"
+                       BorderBrush="#3A3F52" Background="#1E2029"/>
+            </StackPanel>
+          </Grid>
+
+          <StackPanel Spacing="5">
+            <TextBlock Text="Бренд" FontSize="13" Foreground="#B0B4C8" FontWeight="SemiBold"/>
+            <ComboBox Name="BrandComboBox"
+                      DisplayMemberBinding="{Binding Name}"
+                      HorizontalAlignment="Stretch"
+                      Padding="10,8" CornerRadius="8"
+                      BorderBrush="#3A3F52"/>
+          </StackPanel>
+
+          <StackPanel Spacing="5">
+            <TextBlock Text="Категория" FontSize="13" Foreground="#B0B4C8" FontWeight="SemiBold"/>
+            <ComboBox Name="CategoryComboBox"
+                      DisplayMemberBinding="{Binding Name}"
+                      HorizontalAlignment="Stretch"
+                      Padding="10,8" CornerRadius="8"
+                      BorderBrush="#3A3F52"/>
+          </StackPanel>
+
+          <CheckBox Name="ActiveCheckBox" Content="Товар активен"
+                    IsChecked="True" Margin="0,4"/>
+
+        </StackPanel>
+      </ScrollViewer>
+
+    </DockPanel>
+  </Border>
 </Window>
+

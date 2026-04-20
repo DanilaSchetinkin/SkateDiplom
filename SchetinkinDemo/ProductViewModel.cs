@@ -15,5 +15,6 @@ namespace SchetinkinDemo
         public int StockQuantity { get; set; }
         public string BrandName { get; set; }
         public string CategoryName { get; set; }
+        public string? ImagePath { get; set; }
     }
 }

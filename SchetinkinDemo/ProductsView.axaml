@@ -1,53 +1,96 @@
-﻿<UserControl xmlns="https://github.com/avaloniaui"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="SchetinkinDemo.ProductsView"
-        Loaded="ProductsView_Loaded"
-        x:CompileBindings="False">
-  
-  <DockPanel Margin="10">
-    
-    <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Spacing="10" Margin="0,0,0,10">
-      <Button Name="AddButton" Content="Добавить" Click="AddButton_Click"/>
-      <Button Name="EditButton" Content="Изменить" Click="EditButton_Click"/>
-      <Button Name="DeleteButton" Content="Удалить" Foreground="Red" Click="DeleteButton_Click"/>
-      <TextBox Name="SearchTextBox" Watermark="Поиск по названию..." Width="250"/>
-      <Button Name="SearchButton" Content="Поиск" Click="SearchButton_Click"/>
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:SchetinkinDemo"
+             mc:Ignorable="d"
+             x:Class="SchetinkinDemo.ProductsView"
+             Loaded="ProductsView_Loaded"
+             x:CompileBindings="False">
 
-    </StackPanel>
+  <UserControl.Resources>
+    <local:FilePathToBitmapConverter x:Key="FilePathToBitmap"/>
+  </UserControl.Resources>
 
-      <TextBlock Name="DebugTextBlock" 
-               DockPanel.Dock="Bottom" 
-               Foreground="Gray" 
-               Margin="5"/>
+  <DockPanel>
 
-   <ListBox Name="ProductsListBox" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
-        <ListBox.ItemTemplate>
-            <DataTemplate>
-                <!-- Создаем "карточку" для каждого товара -->
-                <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Padding="10" Margin="5">
-                    <Grid ColumnDefinitions="*, Auto" Width="600">
-                        <!-- Левая часть с информацией -->
-                        <StackPanel Grid.Column="0" Spacing="5">
-                            <TextBlock FontSize="16" FontWeight="Bold" Text="{Binding Name}" />
-                            <StackPanel Orientation="Horizontal" Spacing="10">
-                                <TextBlock Text="{Binding Sku, StringFormat='Артикул: {0}'}" />
-                                <TextBlock Text="{Binding BrandName, StringFormat='Бренд: {0}'}" Foreground="Gray"/>
-                                <TextBlock Text="{Binding CategoryName, StringFormat='Категория: {0}'}" Foreground="Gray"/>
-                            </StackPanel>
-                        </StackPanel>
-                        <!-- Правая часть с ценой и остатком -->
-                        <StackPanel Grid.Column="1" Spacing="5" HorizontalAlignment="Right">
-                             <TextBlock FontSize="16" FontWeight="Bold" Text="{Binding Price, StringFormat='{}{0:c}'}" Foreground="Green"/>
-                             <TextBlock Text="{Binding StockQuantity, StringFormat='Остаток: {0}'}" HorizontalAlignment="Right"/>
-                        </StackPanel>
-                    </Grid>
+    <!-- Заголовок и тулбар -->
+    <Border DockPanel.Dock="Top" Background="#2C2F3A" Padding="0,0,0,16"
+            BoxShadow="0 2 8 0 #0A000000" Margin="0,0,0,16">
+      <DockPanel Margin="4,0">
+        <TextBlock DockPanel.Dock="Left" Text="Товары" FontSize="22"
+                   FontWeight="Bold" Foreground="#E8EAF0" VerticalAlignment="Center"/>
+        <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+          <TextBox Name="SearchTextBox" Watermark="🔍  Поиск по названию..."
+                   Width="220" Padding="10,8" CornerRadius="8"
+                   BorderBrush="#3A3F52" Background="#1E2029"/>
+          <Button Name="SearchButton" Content="Найти"
+                  Padding="14,8" CornerRadius="8"
+                  Background="#1A1A2E" Foreground="White"
+                  Click="SearchButton_Click"/>
+          <Button Name="AddButton" Content="+ Добавить"
+                  Padding="14,8" CornerRadius="8"
+                  Background="#2E7D32" Foreground="White"
+                  Click="AddButton_Click"/>
+          <Button Name="EditButton" Content="✏ Изменить"
+                  Padding="14,8" CornerRadius="8"
+                  Background="#1565C0" Foreground="White"
+                  Click="EditButton_Click"/>
+          <Button Name="DeleteButton" Content="🗑 Удалить"
+                  Padding="14,8" CornerRadius="8"
+                  Background="#C62828" Foreground="White"
+                  Click="DeleteButton_Click"/>
+        </StackPanel>
+      </DockPanel>
+    </Border>
+
+    <TextBlock Name="DebugTextBlock" DockPanel.Dock="Bottom"
+               Foreground="#6068A0" FontSize="12" Margin="4,8,0,0"/>
+
+    <ListBox Name="ProductsListBox"
+             ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+             Background="Transparent"
+             BorderThickness="0">
+      <ListBox.ItemTemplate>
+        <DataTemplate>
+          <Border Background="#2C2F3A" CornerRadius="10" Padding="12" Margin="0,0,0,8"
+                  BoxShadow="0 2 8 0 #0A000000">
+            <Grid ColumnDefinitions="72,*,Auto">
+
+              <!-- Картинка товара -->
+              <Border Grid.Column="0" Width="64" Height="64" CornerRadius="8"
+                      Background="#23262F" ClipToBounds="True">
+                <Image Source="{Binding ImagePath, Converter={StaticResource FilePathToBitmap}}"
+                       Stretch="Uniform"/>
+              </Border>
+
+              <StackPanel Grid.Column="1" Spacing="4" Margin="12,0">
+                <TextBlock FontSize="15" FontWeight="Bold" Text="{Binding Name}" Foreground="#E8EAF0"/>
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                  <Border Background="#2A2D3E" CornerRadius="4" Padding="6,2">
+                    <TextBlock Text="{Binding Sku, StringFormat='SKU: {0}'}" FontSize="12" Foreground="#7986CB"/>
+                  </Border>
+                  <TextBlock Text="{Binding BrandName}" FontSize="12" Foreground="#9096B0"/>
+                  <TextBlock Text="{Binding CategoryName}" FontSize="12" Foreground="#9096B0"/>
+                </StackPanel>
+              </StackPanel>
+
+              <StackPanel Grid.Column="2" Spacing="4" HorizontalAlignment="Right" VerticalAlignment="Center">
+                <TextBlock FontSize="18" FontWeight="Bold"
+                           Text="{Binding Price, StringFormat='{}{0:c}'}"
+                           Foreground="#66BB6A" HorizontalAlignment="Right"/>
+                <Border Background="#1E3020" CornerRadius="4" Padding="6,2" HorizontalAlignment="Right">
+                  <TextBlock Text="{Binding StockQuantity, StringFormat='Остаток: {0} шт.'}"
+                             FontSize="12" Foreground="#9CCC65"/>
                 </Border>
-            </DataTemplate>
-        </ListBox.ItemTemplate>
+              </StackPanel>
+
+            </Grid>
+          </Border>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
     </ListBox>
-    
+
   </DockPanel>
 </UserControl>
+
