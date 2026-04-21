@@ -1,0 +1,318 @@
+========================================
+ERD ДИАГРАММА ДЛЯ MERMAID.LIVE
+========================================
+
+ИНСТРУКЦИЯ:
+1. Откройте https://mermaid.live
+2. Удалите весь текст в левом окне
+3. Скопируйте код ниже и вставьте
+4. Нажмите "Actions" → "PNG" для экспорта
+
+
+========================================
+ПОЛНАЯ ERD ДИАГРАММА (все таблицы)
+========================================
+
+erDiagram
+    users {
+        int id PK
+        string first_name
+        string last_name
+        string email
+        string phone
+        date birth_date
+        string password_hash
+        int role_id FK
+        datetime registered_at
+        jsonb preferences
+    }
+
+    roles {
+        int id PK
+        string name
+        string description
+    }
+
+    permissions {
+        int id PK
+        string name
+        string description
+    }
+
+    role_permissions {
+        int role_id FK
+        int permission_id FK
+    }
+
+    products {
+        int id PK
+        string sku
+        string name
+        string description
+        decimal price
+        int stock_quantity
+        int min_stock
+        bool is_active
+        int category_id FK
+        int brand_id FK
+        string productimage
+        jsonb characteristics
+        datetime created_at
+    }
+
+    categories {
+        int id PK
+        string name
+        string description
+        string categoryimage
+        datetime created_at
+    }
+
+    category_paths {
+        int ancestor_id FK
+        int descendant_id FK
+        int depth
+    }
+
+    brands {
+        int id PK
+        string name
+        string description
+        string country
+        string logo_url
+        datetime created_at
+    }
+
+    orders {
+        int id PK
+        string order_number
+        int customer_id FK
+        string status
+        decimal total_amount
+        string shipping_address
+        string comment
+        datetime created_at
+        datetime updated_at
+    }
+
+    order_items {
+        int id PK
+        int order_id FK
+        int product_id FK
+        int quantity
+        decimal price_per_unit
+    }
+
+    carts {
+        int id PK
+        int user_id FK
+        datetime created_at
+        datetime updated_at
+    }
+
+    cart_items {
+        int id PK
+        int cart_id FK
+        int product_id FK
+        int quantity
+    }
+
+    conversations {
+        int id PK
+        string title
+        string type
+        datetime created_at
+    }
+
+    conversation_participants {
+        int conversation_id FK
+        int user_id FK
+        datetime joined_at
+    }
+
+    messages {
+        int id PK
+        int conversation_id FK
+        int sender_id FK
+        string message_text
+        bool is_read
+        datetime sent_at
+    }
+
+    user_addresses {
+        int id PK
+        int user_id FK
+        string address_name
+        string country
+        string city
+        string street
+        string house
+        string apartment
+        string postal_code
+        bool is_default
+        datetime created_at
+    }
+
+    user_logins {
+        int id PK
+        int user_id FK
+        datetime login_time
+    }
+
+    promotions {
+        int id PK
+        string code
+        string description
+        string discount_type
+        decimal discount_value
+        date start_date
+        date end_date
+        bool is_active
+    }
+
+    order_promotions {
+        int order_id FK
+        int promotion_id FK
+    }
+
+    product_reviews {
+        int id PK
+        int product_id FK
+        int user_id FK
+        int rating
+        string comment
+        datetime created_at
+    }
+
+    users ||--o{ orders : "размещает"
+    users ||--o| carts : "имеет"
+    users ||--o{ user_addresses : "хранит"
+    users ||--o{ user_logins : "регистрирует"
+    users ||--o{ messages : "отправляет"
+    users ||--o{ conversation_participants : "участвует"
+    users ||--o{ product_reviews : "оставляет"
+    users }o--|| roles : "имеет"
+
+    roles ||--o{ role_permissions : "включает"
+    permissions ||--o{ role_permissions : "входит в"
+
+    products }o--|| categories : "принадлежит"
+    products }o--o| brands : "производится"
+    products ||--o{ order_items : "входит в"
+    products ||--o{ cart_items : "добавляется в"
+    products ||--o{ product_reviews : "имеет"
+
+    categories ||--o{ category_paths : "предок"
+    categories ||--o{ category_paths : "потомок"
+
+    orders ||--o{ order_items : "содержит"
+    orders ||--o{ order_promotions : "применяет"
+
+    promotions ||--o{ order_promotions : "применяется к"
+
+    carts ||--o{ cart_items : "содержит"
+
+    conversations ||--o{ conversation_participants : "включает"
+    conversations ||--o{ messages : "содержит"
+
+
+========================================
+УПРОЩЕННАЯ ERD (только основные таблицы)
+========================================
+
+erDiagram
+    users {
+        int id PK
+        string email
+        string first_name
+        string last_name
+        int role_id FK
+    }
+
+    roles {
+        int id PK
+        string name
+    }
+
+    products {
+        int id PK
+        string sku
+        string name
+        decimal price
+        int stock_quantity
+        int category_id FK
+        int brand_id FK
+        string productimage
+    }
+
+    categories {
+        int id PK
+        string name
+    }
+
+    brands {
+        int id PK
+        string name
+    }
+
+    orders {
+        int id PK
+        string order_number
+        int customer_id FK
+        string status
+        decimal total_amount
+        datetime created_at
+    }
+
+    order_items {
+        int id PK
+        int order_id FK
+        int product_id FK
+        int quantity
+        decimal price_per_unit
+    }
+
+    conversations {
+        int id PK
+        string title
+        string type
+    }
+
+    messages {
+        int id PK
+        int conversation_id FK
+        int sender_id FK
+        string message_text
+        datetime sent_at
+    }
+
+    users }o--|| roles : "имеет роль"
+    users ||--o{ orders : "размещает"
+    users ||--o{ messages : "отправляет"
+
+    products }o--|| categories : "принадлежит"
+    products }o--o| brands : "производится"
+    products ||--o{ order_items : "входит в"
+
+    orders ||--o{ order_items : "содержит"
+
+    conversations ||--o{ messages : "содержит"
+    users ||--o{ messages : "пишет"
+
+
+========================================
+РЕКОМЕНДАЦИИ
+========================================
+
+ДЛЯ ДИПЛОМА: используйте ПОЛНУЮ версию
+- Показывает все таблицы реальной БД
+- Соответствует SkateshopDbContext.cs
+- Подпишите: "Рисунок 6 – Диаграмма Сущность-Связь (ERD)"
+
+ДЛЯ ПРЕЗЕНТАЦИИ: используйте УПРОЩЕННУЮ версию
+- Только ключевые таблицы
+- Легко читается на слайде
+
+НАСТРОЙКИ В MERMAID.LIVE:
+- Theme: "default" (лучше читается для ERD)
+- Нажмите "Actions" → "PNG" для экспорта

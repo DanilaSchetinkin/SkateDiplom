@@ -1,0 +1,174 @@
+========================================
+ДИАГРАММА ИНТЕРФЕЙСОВ ДЛЯ MERMAID.LIVE
+========================================
+
+ИНСТРУКЦИЯ:
+1. Откройте https://mermaid.live
+2. Удалите весь текст в левом окне
+3. Скопируйте код и вставьте
+4. Нажмите "Actions" → "PNG" для экспорта
+
+
+========================================
+ВАРИАНТ 1: ПОЛНАЯ ДИАГРАММА ИНТЕРФЕЙСОВ
+========================================
+
+flowchart TD
+    START([Запуск приложения]) --> MAIN
+
+    MAIN["🔐 MainWindow\nОкно входа\n─────────────\nEmail\nПароль\nКнопка Войти"]
+
+    MAIN -->|Роль: client| CW
+    MAIN -->|Роль: admin| AW
+    MAIN -->|Роль: staff| AW
+
+    subgraph CLIENT["👤 КЛИЕНТ — ClientWindow"]
+        CW["ClientWindow\n─────────────\nФИО пользователя\nПанель навигации"]
+
+        CW --> CAT
+        CW --> CART
+        CW --> ORD_C
+        CW --> CHAT_C
+
+        CAT["📦 ClientCatalogView\nКаталог товаров\n─────────────\nКнопки категорий\nПоиск по названию\nСортировка\nКарточки товаров\nКнопка В корзину"]
+
+        CART["🛒 CartView\nКорзина\n─────────────\nСписок товаров\nИзображения\nNumericUpDown\nОбщая сумма\nКомментарий\nОформить заказ"]
+
+        ORD_C["📋 ClientOrdersView\nМои заказы\n─────────────\nНомер заказа\nДата создания\nСтатус\nСумма"]
+
+        CHAT_C["💬 ChatView\nПоддержка\n─────────────\nИстория сообщений\nПоле ввода\nКнопка Отправить"]
+    end
+
+    subgraph ADMIN["👨‍💼 АДМИНИСТРАТОР / СОТРУДНИК — Admin"]
+        AW["Admin\n─────────────\nФИО и роль\nПанель навигации\n(зависит от роли)"]
+
+        AW -->|admin + staff| PROD_V
+        AW -->|admin + staff| ORD_V
+        AW -->|только admin| USR_V
+        AW -->|только admin| INBOX_C
+        AW -->|только admin| INBOX_S
+        AW -->|только staff| CHAT_S
+
+        PROD_V["📦 ProductsView\nУправление товарами\n─────────────\nСписок товаров\nКнопка Добавить\nРедактировать\nУдалить"]
+
+        PROD_V --> PROD_E
+
+        PROD_E["✏️ ProductEditorWindow\nРедактор товара\n─────────────\nАртикул SKU\nНазвание\nОписание\nЦена\nКоличество\nКатегория\nБренд\nВыбор изображения\nПредпросмотр фото\nСохранить / Отмена"]
+
+        ORD_V["📋 OrderView\nУправление заказами\n─────────────\nВсе заказы\nИмя клиента\nДата / Сумма\nВыбор статуса\n2x клик → детали"]
+
+        ORD_V --> ORD_D
+
+        ORD_D["🔍 OrderDetailsWindow\nДетали заказа\n─────────────\nДанные заказа\nСписок товаров\nКонтакты клиента\nСумма"]
+
+        USR_V["👥 UserView\nПользователи\n─────────────\nСписок пользователей\nРедактирование\nНазначение ролей"]
+
+        INBOX_C["📥 SupportInboxView\nОбращения клиентов\n─────────────\nСписок бесед\nuser_admin\nКлик → открыть чат"]
+
+        INBOX_S["📥 SupportInboxView\nОбращения сотрудников\n─────────────\nСписок бесед\nstaff_support\nКлик → открыть чат"]
+
+        CHAT_S["💬 ChatView\nТехподдержка\n─────────────\nИстория сообщений\nПоле ввода\nКнопка Отправить"]
+
+        INBOX_C --> CHAT_A
+        INBOX_S --> CHAT_A
+
+        CHAT_A["💬 ChatView\nЧат с пользователем\n─────────────\nИстория сообщений\nПоле ввода\nКнопка Отправить"]
+    end
+
+    AW -->|Выход| MAIN
+    CW -->|Выход| MAIN
+
+    style START fill:#4CAF50,color:#fff
+    style MAIN fill:#5C6BC0,color:#fff
+    style CLIENT fill:#1a237e,color:#fff
+    style ADMIN fill:#1b5e20,color:#fff
+    style CW fill:#3949AB,color:#fff
+    style AW fill:#2E7D32,color:#fff
+    style CAT fill:#283593,color:#fff
+    style CART fill:#283593,color:#fff
+    style ORD_C fill:#283593,color:#fff
+    style CHAT_C fill:#283593,color:#fff
+    style PROD_V fill:#1B5E20,color:#fff
+    style PROD_E fill:#33691E,color:#fff
+    style ORD_V fill:#1B5E20,color:#fff
+    style ORD_D fill:#33691E,color:#fff
+    style USR_V fill:#1B5E20,color:#fff
+    style INBOX_C fill:#1B5E20,color:#fff
+    style INBOX_S fill:#1B5E20,color:#fff
+    style CHAT_S fill:#1B5E20,color:#fff
+    style CHAT_A fill:#33691E,color:#fff
+
+
+========================================
+ВАРИАНТ 2: УПРОЩЕННАЯ (ДЛЯ ПРЕЗЕНТАЦИИ)
+========================================
+
+flowchart TD
+    MAIN["🔐 MainWindow\nВход в систему"]
+
+    MAIN -->|client| CW["👤 ClientWindow"]
+    MAIN -->|admin / staff| AW["👨‍💼 Admin"]
+
+    CW --> CAT["📦 Каталог\nClientCatalogView"]
+    CW --> CART["🛒 Корзина\nCartView"]
+    CW --> ORDC["📋 Мои заказы\nClientOrdersView"]
+    CW --> CHATC["💬 Поддержка\nChatView"]
+
+    AW --> PRODV["📦 Товары\nProductsView"]
+    AW --> ORDV["📋 Заказы\nOrderView"]
+    AW --> USRV["👥 Пользователи\nUserView"]
+    AW --> INBOX["📥 Обращения\nSupportInboxView"]
+    AW --> CHATS["💬 Техподдержка\nChatView"]
+
+    PRODV --> PRODE["✏️ Редактор товара\nProductEditorWindow"]
+    ORDV --> ORDD["🔍 Детали заказа\nOrderDetailsWindow"]
+    INBOX --> CHATA["💬 Чат\nChatView"]
+
+    style MAIN fill:#5C6BC0,color:#fff
+    style CW fill:#3949AB,color:#fff
+    style AW fill:#2E7D32,color:#fff
+
+
+========================================
+ВАРИАНТ 3: ТОЛЬКО НАВИГАЦИЯ (САМАЯ ПРОСТАЯ)
+========================================
+
+flowchart LR
+    MAIN["MainWindow\nВход"] -->|client| CLIENT["ClientWindow"]
+    MAIN -->|admin/staff| ADMIN["Admin"]
+
+    CLIENT --> C1["ClientCatalogView"]
+    CLIENT --> C2["CartView"]
+    CLIENT --> C3["ClientOrdersView"]
+    CLIENT --> C4["ChatView\nПоддержка"]
+
+    ADMIN --> A1["ProductsView"]
+    ADMIN --> A2["OrderView"]
+    ADMIN --> A3["UserView"]
+    ADMIN --> A4["SupportInboxView\nКлиенты"]
+    ADMIN --> A5["SupportInboxView\nСотрудники"]
+    ADMIN --> A6["ChatView\nТехподдержка"]
+
+    A1 --> A1a["ProductEditorWindow"]
+    A2 --> A2a["OrderDetailsWindow"]
+    A4 --> A4a["ChatView"]
+    A5 --> A5a["ChatView"]
+
+
+========================================
+РЕКОМЕНДАЦИИ
+========================================
+
+ДЛЯ ДИПЛОМА: ВАРИАНТ 1 (полная с деталями)
+- Показывает все компоненты и их содержимое
+- Подпишите: "Рисунок 7 – Диаграмма интерфейсов"
+
+ДЛЯ ПРЕЗЕНТАЦИИ: ВАРИАНТ 2 (упрощенная)
+- Чистая и понятная структура
+
+ДЛЯ БЫСТРОГО ОБЗОРА: ВАРИАНТ 3 (только навигация)
+- Минимум деталей, максимум наглядности
+
+НАСТРОЙКИ В MERMAID.LIVE:
+- Theme: "dark" или "default"
+- Нажмите "Actions" → "PNG" для экспорта
